@@ -1,0 +1,635 @@
+object frmRegRefeicoes: TfrmRegRefeicoes
+  Left = 2271
+  Height = 665
+  Top = 215
+  Width = 1000
+  HorzScrollBar.Page = 1331
+  HorzScrollBar.Range = 1906
+  HorzScrollBar.Visible = False
+  VertScrollBar.Page = 1
+  VertScrollBar.Visible = False
+  Caption = 'Registro de Refeições'
+  ClientHeight = 665
+  ClientWidth = 1000
+  Color = clWhite
+  KeyPreview = True
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poMainFormCenter
+  ShowInTaskBar = stAlways
+  object shpModuraFoto: TShape
+    Left = 14
+    Height = 244
+    Top = 57
+    Width = 188
+    Brush.Color = 15921906
+    Pen.Width = 2
+  end
+  object stbBarraStatus: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 642
+    Width = 1000
+    Panels = <    
+      item
+        Text = '(F10) Selecionar refeição'
+        Width = 150
+      end    
+      item
+        Text = '(F11) Tela cheia / normal'
+        Width = 150
+      end    
+      item
+        Text = '(Alt + F4) Fechar'
+        Width = 150
+      end    
+      item
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object pnlRefeicao: TPanel
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 1000
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = '(F10)   SELECIONAR   REFEIÇÃO'
+    Color = clNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -37
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object edtCracha: TEdit
+    Left = 16
+    Height = 33
+    Top = 302
+    Width = 184
+    Alignment = taCenter
+    BorderStyle = bsNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -27
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MaxLength = 10
+    OnKeyDown = edtCrachaKeyDown
+    OnKeyPress = edtCrachaKeyPress
+    ParentFont = False
+    TabOrder = 2
+  end
+  object lblNome: TLabel
+    Left = 216
+    Height = 29
+    Top = 102
+    Width = 65
+    Caption = 'NOME'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblFuncao: TLabel
+    Left = 216
+    Height = 23
+    Top = 142
+    Width = 67
+    Caption = 'FUNCAO'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblEmpresa: TLabel
+    Left = 216
+    Height = 23
+    Top = 175
+    Width = 74
+    Caption = 'EMPRESA'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblValidade: TLabel
+    Left = 16
+    Height = 15
+    Top = 340
+    Width = 54
+    Caption = 'Validade: '
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object lblDataValidade: TLabel
+    Left = 72
+    Height = 15
+    Top = 340
+    Width = 72
+    Caption = 'dd/mm/aaaa'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object pnlUltimosReg: TPanel
+    Left = 0
+    Height = 284
+    Top = 358
+    Width = 1000
+    Align = alBottom
+    ClientHeight = 284
+    ClientWidth = 1000
+    Color = 16768206
+    ParentColor = False
+    TabOrder = 3
+    object shpModuraFotoReg1: TShape
+      Left = 11
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg2: TShape
+      Left = 201
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg4: TShape
+      Left = 581
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg3: TShape
+      Left = 391
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg5: TShape
+      Left = 771
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg6: TShape
+      Left = 961
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg7: TShape
+      Left = 1151
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg8: TShape
+      Left = 1341
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg9: TShape
+      Left = 1531
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object shpModuraFotoReg10: TShape
+      Left = 1721
+      Height = 242
+      Top = 11
+      Width = 186
+    end
+    object imgFotoReg1: TImage
+      Left = 12
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg2: TImage
+      Left = 202
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg3: TImage
+      Left = 392
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg4: TImage
+      Left = 582
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg5: TImage
+      Left = 772
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg6: TImage
+      Left = 962
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg7: TImage
+      Left = 1152
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg8: TImage
+      Left = 1342
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg9: TImage
+      Left = 1532
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object imgFotoReg10: TImage
+      Left = 1722
+      Height = 240
+      Top = 12
+      Width = 184
+      Center = True
+      Proportional = True
+      Stretch = True
+    end
+    object edtCrachaReg1: TEdit
+      Left = 11
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edtCrachaReg2: TEdit
+      Left = 201
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object edtCrachaReg3: TEdit
+      Left = 391
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object edtCrachaReg4: TEdit
+      Left = 581
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object edtCrachaReg5: TEdit
+      Left = 771
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edtCrachaReg6: TEdit
+      Left = 961
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object edtCrachaReg7: TEdit
+      Left = 1151
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object edtCrachaReg8: TEdit
+      Left = 1341
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object edtCrachaReg9: TEdit
+      Left = 1531
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 8
+    end
+    object edtCrachaReg10: TEdit
+      Left = 1721
+      Height = 27
+      Top = 254
+      Width = 186
+      Alignment = taCenter
+      AutoSize = False
+      AutoSelect = False
+      CharCase = ecUppercase
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 9
+    end
+  end
+  object imgFoto: TImage
+    Left = 16
+    Height = 240
+    Top = 59
+    Width = 184
+    Center = True
+    Proportional = True
+    Stretch = True
+  end
+  object lblCracha: TLabel
+    Left = 216
+    Height = 39
+    Top = 59
+    Width = 110
+    Caption = 'CRACHA'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -32
+    Font.Name = 'Calibri'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblNomeCracha: TLabel
+    Left = 216
+    Height = 15
+    Top = 219
+    Width = 83
+    Caption = 'lblNomeCracha'
+    ParentColor = False
+    Visible = False
+  end
+  object sqlqConsultaCracha: TSQLQuery
+    PacketRecords = 1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 720
+    Top = 96
+  end
+  object sqlqRegRefeicao: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoAutoCommit, sqoRefreshUsingSelect]
+    Params = <>
+    Left = 840
+    Top = 96
+  end
+  object sqlqParametros: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 368
+    Top = 59
+  end
+  object sqlqHorariosRefeicoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 496
+    Top = 59
+  end
+  object sqlqRefeicoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 368
+    Top = 131
+  end
+end

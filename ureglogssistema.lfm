@@ -1,0 +1,413 @@
+object frmRegLogsSistema: TfrmRegLogsSistema
+  Left = 2308
+  Height = 562
+  Top = 152
+  Width = 931
+  Caption = 'Registros de Logs do sistema'
+  ClientHeight = 562
+  ClientWidth = 931
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 931
+    Align = alTop
+    ClientHeight = 30
+    ClientWidth = 931
+    ParentColor = False
+    TabOrder = 0
+    object sbtnAtualizar: TSpeedButton
+      Left = 2
+      Height = 24
+      Hint = 'Atualizar'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAtualizarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Bevel1: TBevel
+      Left = 30
+      Height = 25
+      Top = 2
+      Width = 2
+    end
+    object sbtnDeletarLogs: TSpeedButton
+      Left = 35
+      Height = 24
+      Hint = 'Deletar Logs'
+      Top = 2
+      Width = 24
+      OnClick = sbtnDeletarLogsClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnLimparLogs: TSpeedButton
+      Left = 56
+      Height = 24
+      Hint = 'Limpar todos os Logs'
+      Top = 2
+      Width = 24
+      OnClick = sbtnLimparLogsClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnGerFiltros: TSpeedButton
+      Left = 172
+      Height = 24
+      Hint = 'Filtros'
+      Top = 2
+      Width = 50
+      Caption = 'Filtros'
+      OnClick = sbtnGerFiltrosClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object bcbtnAplFiltros: TBCButton
+      Left = 220
+      Height = 22
+      Top = 3
+      Width = 15
+      StateClicked.Background.Color = 16245964
+      StateClicked.Background.Gradient1.StartColor = 16577765
+      StateClicked.Background.Gradient1.EndColor = 16180676
+      StateClicked.Background.Gradient1.GradientType = gtLinear
+      StateClicked.Background.Gradient1.Point1XPercent = 0
+      StateClicked.Background.Gradient1.Point1YPercent = 0
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 100
+      StateClicked.Background.Gradient2.StartColor = 15716760
+      StateClicked.Background.Gradient2.EndColor = 14398312
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 55
+      StateClicked.Background.Style = bbsColor
+      StateClicked.Border.Color = 10048512
+      StateClicked.Border.LightColor = clBlack
+      StateClicked.Border.LightOpacity = 100
+      StateClicked.Border.Style = bboSolid
+      StateClicked.FontEx.Color = clBlack
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = False
+      StateClicked.FontEx.ShadowRadius = 5
+      StateClicked.FontEx.ShadowOffsetX = 5
+      StateClicked.FontEx.ShadowOffsetY = 5
+      StateClicked.FontEx.Style = []
+      StateHover.Background.Color = 16511461
+      StateHover.Background.Gradient1.StartColor = 16643818
+      StateHover.Background.Gradient1.EndColor = 16576729
+      StateHover.Background.Gradient1.GradientType = gtLinear
+      StateHover.Background.Gradient1.Point1XPercent = 0
+      StateHover.Background.Gradient1.Point1YPercent = 0
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 100
+      StateHover.Background.Gradient2.StartColor = 16639678
+      StateHover.Background.Gradient2.EndColor = 16112039
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 50
+      StateHover.Background.Style = bbsColor
+      StateHover.Border.Color = 14120960
+      StateHover.Border.LightOpacity = 200
+      StateHover.Border.Style = bboSolid
+      StateHover.FontEx.Color = clBlack
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = False
+      StateHover.FontEx.ShadowRadius = 5
+      StateHover.FontEx.ShadowOffsetX = 5
+      StateHover.FontEx.ShadowOffsetY = 5
+      StateHover.FontEx.Style = []
+      StateNormal.Background.Color = 14803425
+      StateNormal.Background.Gradient1.StartColor = 15921906
+      StateNormal.Background.Gradient1.EndColor = 15461355
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 14540253
+      StateNormal.Background.Gradient2.EndColor = 13619151
+      StateNormal.Background.Gradient2.GradientType = gtLinear
+      StateNormal.Background.Gradient2.Point1XPercent = 0
+      StateNormal.Background.Gradient2.Point1YPercent = 0
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 100
+      StateNormal.Background.Gradient1EndPercent = 50
+      StateNormal.Background.Style = bbsColor
+      StateNormal.Border.Color = 11382189
+      StateNormal.Border.LightOpacity = 200
+      StateNormal.Border.Style = bboSolid
+      StateNormal.FontEx.Color = clBlack
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Shadow = False
+      StateNormal.FontEx.ShadowRadius = 5
+      StateNormal.FontEx.ShadowOffsetX = 5
+      StateNormal.FontEx.ShadowOffsetY = 5
+      StateNormal.FontEx.Style = []
+      Caption = '▼'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      ParentColor = False
+      Rounding.RoundX = 0
+      Rounding.RoundY = 0
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      DropDownMenu = ppmnFiltros
+      MemoryUsage = bmuHigh
+    end
+    object Bevel2: TBevel
+      Left = 84
+      Height = 25
+      Top = 2
+      Width = 2
+    end
+    object Bevel4: TBevel
+      Left = 167
+      Height = 25
+      Top = 2
+      Width = 2
+    end
+    object sbtnExpRegistros: TSpeedButton
+      Left = 89
+      Height = 24
+      Hint = 'Exportar registros'
+      Top = 2
+      Width = 60
+      Caption = 'Exportar'
+      OnClick = sbtnExpRegistrosClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object bcbtnExpRegistros: TBCButton
+      Left = 147
+      Height = 22
+      Top = 3
+      Width = 15
+      StateClicked.Background.Color = 16245964
+      StateClicked.Background.Gradient1.StartColor = 16577765
+      StateClicked.Background.Gradient1.EndColor = 16180676
+      StateClicked.Background.Gradient1.GradientType = gtLinear
+      StateClicked.Background.Gradient1.Point1XPercent = 0
+      StateClicked.Background.Gradient1.Point1YPercent = 0
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 100
+      StateClicked.Background.Gradient2.StartColor = 15716760
+      StateClicked.Background.Gradient2.EndColor = 14398312
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 55
+      StateClicked.Background.Style = bbsColor
+      StateClicked.Border.Color = 10048512
+      StateClicked.Border.LightColor = clBlack
+      StateClicked.Border.LightOpacity = 100
+      StateClicked.Border.Style = bboSolid
+      StateClicked.FontEx.Color = clBlack
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = False
+      StateClicked.FontEx.ShadowRadius = 5
+      StateClicked.FontEx.ShadowOffsetX = 5
+      StateClicked.FontEx.ShadowOffsetY = 5
+      StateClicked.FontEx.Style = []
+      StateHover.Background.Color = 16511461
+      StateHover.Background.Gradient1.StartColor = 16643818
+      StateHover.Background.Gradient1.EndColor = 16576729
+      StateHover.Background.Gradient1.GradientType = gtLinear
+      StateHover.Background.Gradient1.Point1XPercent = 0
+      StateHover.Background.Gradient1.Point1YPercent = 0
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 100
+      StateHover.Background.Gradient2.StartColor = 16639678
+      StateHover.Background.Gradient2.EndColor = 16112039
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 50
+      StateHover.Background.Style = bbsColor
+      StateHover.Border.Color = 14120960
+      StateHover.Border.LightOpacity = 200
+      StateHover.Border.Style = bboSolid
+      StateHover.FontEx.Color = clBlack
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = False
+      StateHover.FontEx.ShadowRadius = 5
+      StateHover.FontEx.ShadowOffsetX = 5
+      StateHover.FontEx.ShadowOffsetY = 5
+      StateHover.FontEx.Style = []
+      StateNormal.Background.Color = 14803425
+      StateNormal.Background.Gradient1.StartColor = 15921906
+      StateNormal.Background.Gradient1.EndColor = 15461355
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 14540253
+      StateNormal.Background.Gradient2.EndColor = 13619151
+      StateNormal.Background.Gradient2.GradientType = gtLinear
+      StateNormal.Background.Gradient2.Point1XPercent = 0
+      StateNormal.Background.Gradient2.Point1YPercent = 0
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 100
+      StateNormal.Background.Gradient1EndPercent = 50
+      StateNormal.Background.Style = bbsColor
+      StateNormal.Border.Color = 11382189
+      StateNormal.Border.LightOpacity = 200
+      StateNormal.Border.Style = bboSolid
+      StateNormal.FontEx.Color = clBlack
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Shadow = False
+      StateNormal.FontEx.ShadowRadius = 5
+      StateNormal.FontEx.ShadowOffsetX = 5
+      StateNormal.FontEx.ShadowOffsetY = 5
+      StateNormal.FontEx.Style = []
+      Caption = '▼'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      ParentColor = False
+      Rounding.RoundX = 0
+      Rounding.RoundY = 0
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      DropDownMenu = ppmnExportar
+      MemoryUsage = bmuHigh
+    end
+  end
+  object LogStatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 539
+    Width = 931
+    Panels = <    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object dbgLogsSistema: TDBGrid
+    Left = 0
+    Height = 509
+    Top = 30
+    Width = 931
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = dsLogsSistema
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+    Scrollbars = ssAutoBoth
+    TabOrder = 2
+    TitleStyle = tsNative
+    OnKeyDown = dbgLogsSistemaKeyDown
+    OnKeyUp = dbgLogsSistemaKeyUp
+    OnMouseUp = dbgLogsSistemaMouseUp
+  end
+  object Bevel3: TBevel
+    Left = 84
+    Height = 25
+    Top = 2
+    Width = 2
+  end
+  object dsLogsSistema: TDataSource
+    DataSet = sqlqLogsSistema
+    Left = 159
+    Top = 64
+  end
+  object sqlqLogsSistema: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 64
+    Top = 64
+  end
+  object sqlqLogsOperacoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 64
+    Top = 144
+  end
+  object ppmnExportar: TPopupMenu
+    Left = 212
+    Top = 151
+    object ppmniExpExcel: TMenuItem
+      Caption = '&Excel'
+      OnClick = ppmniExpExcelClick
+    end
+  end
+  object ppmnFiltros: TPopupMenu
+    OwnerDraw = True
+    OnPopup = ppmnFiltrosPopup
+    Left = 312
+    Top = 151
+    object ppmniGerFiltros: TMenuItem
+      Caption = 'Gerenciar &filtros'
+      OnClick = ppmniGerFiltrosClick
+    end
+    object ppmniNovoFiltro: TMenuItem
+      Caption = '&Novo filtro'
+      OnClick = ppmniNovoFiltroClick
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object ppmniFiltrosGlobais: TMenuItem
+      Caption = 'Filtros &globais'
+      object MenuItem1: TMenuItem
+        Caption = 'Não há filtros globais'
+      end
+    end
+    object ppmniFiltrosPrivados: TMenuItem
+      Caption = 'Filtros &privados'
+      object MenuItem2: TMenuItem
+        Caption = 'Não há filtros privados'
+      end
+    end
+  end
+  object SaveDialog: TSaveDialog
+    Title = 'Exportar arquivo'
+    Filter = 'Pasta de Trabalho do Excel|*xlsx|Pasta de Trabalho do Excel 97-2003|*xls'
+    InitialDir = '%userprofile%\Documents\'
+    Options = [ofExtensionDifferent, ofFileMustExist, ofEnableSizing, ofViewDetail]
+    Left = 502
+    Top = 155
+  end
+  object sqlqFiltro: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 328
+    Top = 64
+  end
+end

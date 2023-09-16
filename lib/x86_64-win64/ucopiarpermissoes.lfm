@@ -1,0 +1,166 @@
+object frmCopiarPermissoes: TfrmCopiarPermissoes
+  Left = 330
+  Height = 500
+  Top = 31
+  Width = 700
+  BorderStyle = bsDialog
+  Caption = 'Copiar permissões'
+  ClientHeight = 500
+  ClientWidth = 700
+  OnKeyDown = FormKeyDown
+  Position = poMainFormCenter
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 700
+    Align = alTop
+    ClientHeight = 30
+    ClientWidth = 700
+    TabOrder = 0
+    object sbtnAtualizar: TSpeedButton
+      Left = 2
+      Height = 24
+      Hint = 'Atualizar'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAtualizarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object pnlComandosOper: TPanel
+    Left = 0
+    Height = 50
+    Top = 450
+    Width = 700
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 700
+    TabOrder = 1
+    object sbtnCopiar: TSpeedButton
+      Left = 10
+      Height = 24
+      Top = 5
+      Width = 80
+      Caption = 'Co&piar...'
+      OnClick = sbtnCopiarClick
+    end
+    object sbtnCancelar: TSpeedButton
+      Left = 90
+      Height = 24
+      Top = 5
+      Width = 80
+      Caption = '&Cancelar'
+      OnClick = sbtnCancelarClick
+    end
+  end
+  object pstConteudo: TPairSplitter
+    Left = 0
+    Height = 420
+    Top = 30
+    Width = 700
+    Align = alClient
+    Position = 336
+    object pstsEsquerdo: TPairSplitterSide
+      Cursor = crArrow
+      Left = 0
+      Height = 420
+      Top = 0
+      Width = 336
+      ClientWidth = 336
+      ClientHeight = 420
+      object pnlEsqTitulo: TPanel
+        Left = 0
+        Height = 20
+        Top = 0
+        Width = 336
+        Align = alTop
+        Caption = 'Usuário Origem'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object lstvwUsuarioOrigem: TListView
+        Left = 0
+        Height = 400
+        Top = 20
+        Width = 336
+        Align = alClient
+        Checkboxes = True
+        Columns = <        
+          item
+            Caption = 'UOID'
+            Visible = False
+            Width = 10
+          end        
+          item
+            AutoSize = True
+            Caption = 'UOUsuario'
+            Width = 10
+          end        
+          item
+            Caption = 'UOStatus'
+            Visible = False
+            Width = 10
+          end>
+        MultiSelect = True
+        ReadOnly = True
+        RowSelect = True
+        ScrollBars = ssAutoBoth
+        ShowColumnHeaders = False
+        TabOrder = 1
+        OnCustomDrawSubItem = lstvwUsuarioOrigemCustomDrawSubItem
+      end
+    end
+    object pstsDireito: TPairSplitterSide
+      Cursor = crArrow
+      Left = 341
+      Height = 420
+      Top = 0
+      Width = 359
+      ClientWidth = 359
+      ClientHeight = 420
+      object pnlDirTitulo: TPanel
+        Left = 0
+        Height = 20
+        Top = 0
+        Width = 359
+        Align = alTop
+        Caption = 'Usuário Destino'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object lstvwUsuarioDestino: TListView
+        Left = 0
+        Height = 400
+        Top = 20
+        Width = 359
+        Align = alClient
+        Checkboxes = True
+        Columns = <        
+          item
+            Caption = 'UDID'
+            Visible = False
+          end        
+          item
+            AutoSize = True
+            Caption = 'UDUsuario'
+            Width = 71
+          end        
+          item
+            Caption = 'UDStatus'
+            Visible = False
+          end>
+        MultiSelect = True
+        ReadOnly = True
+        RowSelect = True
+        ScrollBars = ssAutoBoth
+        ShowColumnHeaders = False
+        TabOrder = 1
+        ViewStyle = vsReport
+      end
+    end
+  end
+end

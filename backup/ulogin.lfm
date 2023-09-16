@@ -1,0 +1,143 @@
+object frmLogin: TfrmLogin
+  Left = 2469
+  Height = 258
+  Top = 388
+  Width = 455
+  BorderStyle = bsDialog
+  Caption = 'Login'
+  ClientHeight = 258
+  ClientWidth = 455
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnClose = FormClose
+  OnKeyPress = FormKeyPress
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poScreenCenter
+  object lblUsuario: TLabel
+    Left = 232
+    Height = 15
+    Top = 99
+    Width = 40
+    Caption = 'Usuário'
+    ParentColor = False
+  end
+  object lblSenha: TLabel
+    Left = 232
+    Height = 15
+    Top = 147
+    Width = 32
+    Caption = 'Senha'
+    ParentColor = False
+  end
+  object lblBanco: TLabel
+    Left = 232
+    Height = 15
+    Top = 221
+    Width = 33
+    Caption = 'Banco'
+    ParentColor = False
+  end
+  object edtUsuario: TEdit
+    Left = 232
+    Height = 23
+    Top = 119
+    Width = 180
+    CharCase = ecLowerCase
+    TabOrder = 0
+  end
+  object edtSenha: TEdit
+    Left = 232
+    Height = 23
+    Top = 167
+    Width = 180
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object cbBanco: TComboBox
+    Left = 268
+    Height = 21
+    Top = 218
+    Width = 144
+    ItemHeight = 15
+    Style = csOwnerDrawFixed
+    TabOrder = 2
+  end
+  object sbtnOk: TSpeedButton
+    Left = 414
+    Height = 23
+    Top = 167
+    Width = 23
+    Caption = '&Ok'
+    Flat = True
+    OnClick = sbtnOkClick
+  end
+  object lblRecuperarSenha: TLabel
+    Left = 328
+    Height = 15
+    Top = 193
+    Width = 84
+    Caption = 'recuperar senha'
+    Font.Color = clGrayText
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblRecuperarSenhaClick
+    OnMouseEnter = lblRecuperarSenhaMouseEnter
+    OnMouseLeave = lblRecuperarSenhaMouseLeave
+  end
+  object sqlqLogin: TSQLQuery
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID_USUARIO'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'USUARIO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'SENHA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftBoolean
+        Precision = -1
+      end>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    SQL.Strings = (
+      'SELECT * FROM G_USUARIOS'
+    )
+    InsertSQL.Strings = (
+      'SELECT * FROM G_USUARIOS'
+    )
+    Params = <>
+    Macros = <>
+    Left = 264
+    Top = 32
+  end
+  object sqlqPermissoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 384
+    Top = 32
+  end
+end

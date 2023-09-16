@@ -1,0 +1,271 @@
+object frmFiltros: TfrmFiltros
+  Left = 2170
+  Height = 558
+  Top = 250
+  Width = 500
+  BorderStyle = bsDialog
+  Caption = 'Filtros'
+  ClientHeight = 558
+  ClientWidth = 500
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  object gpbxFiltros: TGroupBox
+    Left = 5
+    Height = 322
+    Top = 5
+    Width = 490
+    Caption = 'Filtros'
+    ClientHeight = 302
+    ClientWidth = 486
+    TabOrder = 0
+    object ltvwFiltros: TListView
+      Left = 8
+      Height = 268
+      Top = 3
+      Width = 350
+      Columns = <      
+        item
+          AutoSize = True
+          Caption = 'T'
+          Width = 21
+        end      
+        item
+          Caption = 'ID'
+          Visible = False
+        end      
+        item
+          Caption = 'Default'
+          Visible = False
+        end      
+        item
+          AutoSize = True
+          Caption = 'Filtro'
+          Width = 42
+        end      
+        item
+          Caption = 'ID_Usuario'
+          Visible = False
+        end      
+        item
+          Caption = 'Global'
+          Visible = False
+        end>
+      HideSelection = False
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssAutoVertical
+      ShowColumnHeaders = False
+      SmallImages = imglstFiltros
+      SmallImagesWidth = -1
+      StateImagesWidth = -1
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnInsert = ltvwFiltrosInsert
+      OnKeyDown = ltvwFiltrosKeyDown
+      OnSelectItem = ltvwFiltrosSelectItem
+    end
+    object btnAtualizar: TButton
+      Left = 402
+      Height = 24
+      Top = 3
+      Width = 80
+      Caption = '&Atualizar'
+      OnClick = btnAtualizarClick
+      TabOrder = 1
+    end
+    object btnNovo: TButton
+      Left = 402
+      Height = 24
+      Top = 28
+      Width = 80
+      Caption = '&Novo'
+      OnClick = btnNovoClick
+      TabOrder = 2
+    end
+    object btnRenomear: TButton
+      Left = 402
+      Height = 24
+      Top = 53
+      Width = 80
+      Caption = '&Renomear'
+      OnClick = btnRenomearClick
+      TabOrder = 3
+    end
+    object btnEditar: TButton
+      Left = 402
+      Height = 24
+      Top = 78
+      Width = 80
+      Caption = '&Editar'
+      OnClick = btnEditarClick
+      TabOrder = 4
+    end
+    object btnCopiar: TButton
+      Left = 402
+      Height = 24
+      Top = 103
+      Width = 80
+      Caption = '&Copiar'
+      TabOrder = 5
+    end
+    object btnExcluir: TButton
+      Left = 402
+      Height = 24
+      Top = 128
+      Width = 80
+      Caption = 'E&xcluir'
+      OnClick = btnExcluirClick
+      TabOrder = 6
+    end
+    object ckbxFiltroDefault: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 278
+      Width = 188
+      Caption = 'Sempre usar este filtro ao iniciar'
+      OnExit = ckbxFiltroDefaultExit
+      TabOrder = 7
+    end
+    object Bevel1: TBevel
+      Left = 380
+      Height = 268
+      Top = 3
+      Width = 2
+    end
+  end
+  object gpbxFiltroSelecionado: TGroupBox
+    Left = 5
+    Height = 225
+    Top = 330
+    Width = 490
+    Caption = 'Filtro selecionado'
+    ClientHeight = 205
+    ClientWidth = 486
+    TabOrder = 1
+    object dbgFiltroSelecionado: TDBGrid
+      Left = 8
+      Height = 165
+      Top = 3
+      Width = 474
+      Color = clWindow
+      Columns = <>
+      DataSource = dsExpressoes
+      Options = [dgIndicator, dgColumnResize, dgColLines, dgTabs, dgAutoSizeColumns]
+      ReadOnly = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleStyle = tsNative
+      OnDrawColumnCell = dbgFiltroSelecionadoDrawColumnCell
+    end
+    object btnExecutar: TButton
+      Left = 321
+      Height = 24
+      Top = 175
+      Width = 80
+      Caption = '&Executar'
+      OnClick = btnExecutarClick
+      TabOrder = 1
+    end
+    object btnFechar: TButton
+      Left = 402
+      Height = 24
+      Top = 175
+      Width = 80
+      Caption = '&Fechar'
+      OnClick = btnFecharClick
+      TabOrder = 2
+    end
+  end
+  object imglstFiltros: TImageList
+    Left = 432
+    Top = 184
+    Bitmap = {
+      4C7A020000001000000010000000160500000000000078DA9595694C95471486
+      315DA2266DA34DD31FFE68B41AB549E3125B8955288A5885125B04044559C415
+      0B55015B51AB94CB2AAB484140E002B223EB65B92CB22F0A5C040A5E11944576
+      11B978C1E2D30FD31AAD4BF1C7C937DF9C39CFCC9C79CF0CA0C23FD6D7D34B42
+      4C2CFE3EBEDC92CBE139DFFF59655919569696AC5DFD15A6C6DBF9FEBBCDA4A5
+      A64E8BF178E231BA5A1B3923F2A07D047C23F3D05053E3938FE74E7B0D7E172E
+      22EB844C99920419882ECB505151213C3C7C5A8CDE5148BA364644E928170A46
+      71C91C66D6077318E8EF9B5EFC7D25BED983F8491FE09C318C8DB8937CF9E45B
+      E5D025F92E0EB11D1C13B7617ABE89F2A69EB78A1F1D9BC0F24223BB7DEA30F1
+      ACE65060038323CAE9339E8CE29F5C8DA94711F6C1D544655EE74A422803DD75
+      4C4EFEF5464E4E4624A9316E944AC5B436D771B3B186AC5431CD3589B4D4C40B
+      DF38140FFB5FC928B92A213AE42CF9E9E7C94EF6A4AFA783F6DB8D94647973A3
+      2C989A425FAA725DA8C83ACB50DFCD971809D17EA4C5BA7235C39BECB85F90DF
+      6C4692E04CB5D499D28C5314A5D85298644D499A3DF971FB78A4187A81219544
+      13E0B19FE20C67CA248E24861E2637CE86FC782B72A2CD490FFD8194206DA431
+      16A405EB202B3EFFD21A1AEAAF9112759AD4B0BD648977931DB993CC3003D243
+      7489F4D424C95F8D381F55225D97087EA3D7E652F1E809B2DA7281E540A4D726
+      429C567270C722CED92D26CA6501E18EF388705F8DE2E9B1BEF93CA7D437FE18
+      268446CB9FF5541484539A1B28B46B189F72FC67FCF8C38754BB8B90EE31A4F2
+      F72334063A23F371407A7407E2033BA92F2D7DED9C5D1515E418EB7057128AF2
+      D1C0B37153B34C3C1961AC258FC2E3FA441FB77E89D129C44A4D37D1DE9A835C
+      798FDBC35D0C2806E9B8DF41E3BD261AFB6E211FEBA57FB8964ABF5D781F347B
+      C6181B1CE4CAB6F5E495FB73AD5746576F33CAD15E9854D2D2D3447E733E85CD
+      0514B75CA5B0AD0A49733C8927B508727379CAA8727626E4D85AA2049D8C0F09
+      DA1ABE03637D3C186AA7A8368B32590ED71BA594D449C8B99E81538C08DBDF54
+      F1D457A5BBBB9B14C32DA4B86B3018B70DAA3CE0B684F6FA6C2E457B1176D98B
+      98783FA263BDF10F74C0CA660B8B57CF6499FA6CE26CD409F4F2207997064E76
+      CB90B87D83226907E41F419E7008A35D5FA0A5BF001D83856CD099C72AB599A8
+      A9CF404B6B261BB5E7E26BADCAAFE646849BABB1DCF023E66F9881F5E1CFE988
+      3500892572F136323D35F8F6C7D92CDA3883259BDF41C3F043421DD720167495
+      1B6082F5366D2EEE5E87AAD5A72C307C9FCF0CDE23C5671DA49940FA6EC832E7
+      80DD42161ACF62E98E59C4F969D275651F95A94718C87163FFD6CD441869B1E5
+      EC12E61F98C509D75528D22C20659770991A0B1C53446E2B9963F12E76A2E54C
+      963A1212AC8B99CF1ACA827FE290913E817BF770C26B3DF6626D9495E7A0F024
+      E41C836C1BC83D4A43B219A7FFD0E04EDE0906CB3D8949B5C656D863C03E2D02
+      FDFDA929AF20C8721305373C412EBC37B5C1C239F8418517540A7DD542ADD65F
+      82A658861AE3417987918A440CBEFE9241413B531A08B4B7A32CC841D04C07F4
+      D5407B11DCCA152C1B5AF384FF62A15F78541863B2B3013BCD15444444BCA063
+      6F0B73CA7D9DE07E17ADCA5ADA1435742B9AE89D689BAA80A94AA4BF221BDB0D
+      2B7072727A651D5D7471E194AE26EE225DCEC4EA21CA35C335D39CB4989388AD
+      4CD05BB994B0B0B037D67D5F4F0F0122113F6FD763BFEE7AF668AB63A9B7950B
+      42AEFEDDEFF3F6370156D826
+    }
+  end
+  object sqlqFiltros: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 432
+    Top = 256
+  end
+  object sqlqFiltrosOperacoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoAutoApplyUpdates, sqoAutoCommit]
+    Params = <>
+    Macros = <>
+    Left = 432
+    Top = 316
+  end
+  object sqlqExpressoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    ReadOnly = True
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 232
+    Top = 400
+  end
+  object dsExpressoes: TDataSource
+    DataSet = sqlqExpressoes
+    Left = 320
+    Top = 405
+  end
+end

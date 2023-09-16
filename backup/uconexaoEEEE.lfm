@@ -1,0 +1,24 @@
+object dmConexao: TdmConexao
+  OldCreateOrder = False
+  Height = 299
+  HorizontalOffset = 563
+  VerticalOffset = 238
+  Width = 389
+  object ConexaoDB: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'D:\Desenvolvimento\Lazarus\Controle de Pessoal\ControlePessoal.db'
+    KeepConnection = False
+    Transaction = frmLogin.sqltLogin
+    ConnectorType = 'SQLite3'
+    Left = 40
+    Top = 24
+  end
+  object SQLDBLibraryLoader: TSQLDBLibraryLoader
+    Enabled = True
+    ConnectionType = 'SQLite3'
+    LibraryName = 'D:\Desenvolvimento\Lazarus\Controle de Pessoal\sqlite3.dll'
+    Left = 136
+    Top = 24
+  end
+end

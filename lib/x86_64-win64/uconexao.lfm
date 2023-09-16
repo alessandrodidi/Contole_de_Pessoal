@@ -1,0 +1,30 @@
+object dmConexao: TdmConexao
+  OldCreateOrder = False
+  Height = 299
+  HorizontalOffset = 1481
+  VerticalOffset = 248
+  Width = 389
+  object ConexaoDB: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'D:\Desenvolvimento\Lazarus\Controle de Pessoal\ControlePessoal.db'
+    KeepConnection = False
+    Transaction = sqltTransactions
+    ConnectorType = 'ODBC'
+    Left = 40
+    Top = 24
+  end
+  object SQLDBLibraryLoader: TSQLDBLibraryLoader
+    Enabled = False
+    ConnectionType = 'ODBC'
+    LibraryName = 'ODBC'
+    Left = 136
+    Top = 24
+  end
+  object sqltTransactions: TSQLTransaction
+    Active = False
+    Database = ConexaoDB
+    Left = 40
+    Top = 96
+  end
+end

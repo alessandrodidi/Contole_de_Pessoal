@@ -1,0 +1,370 @@
+object frmEditorFiltros: TfrmEditorFiltros
+  Left = 285
+  Height = 558
+  Top = 250
+  Width = 499
+  BorderStyle = bsDialog
+  Caption = 'Filtro'
+  ClientHeight = 558
+  ClientWidth = 499
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  object gpbxCriterios: TGroupBox
+    Left = 8
+    Height = 301
+    Top = 8
+    Width = 483
+    Caption = 'Critérios'
+    ClientHeight = 281
+    ClientWidth = 479
+    TabOrder = 0
+    object lblCampos: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 44
+      Caption = 'Campos'
+      ParentColor = False
+    end
+    object lblPesquisar: TLabel
+      Left = 8
+      Height = 15
+      Top = 29
+      Width = 50
+      Caption = 'Pesquisar'
+      ParentColor = False
+    end
+    object lstvwCampos: TListView
+      Left = 8
+      Height = 212
+      Top = 59
+      Width = 222
+      Columns = <      
+        item
+          AutoSize = True
+          Caption = 'CAMPO'
+          Width = 58
+        end      
+        item
+          Caption = 'CAMPO_BD'
+          Visible = False
+        end>
+      HideSelection = False
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssAutoVertical
+      ShowColumnHeaders = False
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnInsert = lstvwCamposInsert
+      OnSelectItem = lstvwCamposSelectItem
+    end
+    object Bevel1: TBevel
+      Left = 239
+      Height = 263
+      Top = 8
+      Width = 2
+    end
+    object lblCriterio: TLabel
+      Left = 253
+      Height = 15
+      Top = 8
+      Width = 39
+      Caption = 'Critério'
+      ParentColor = False
+    end
+    object lblValor: TLabel
+      Left = 253
+      Height = 15
+      Top = 59
+      Width = 26
+      Caption = 'Valor'
+      ParentColor = False
+    end
+    object lblValorFinal: TLabel
+      Left = 253
+      Height = 15
+      Top = 110
+      Width = 52
+      Caption = 'Valor final'
+      ParentColor = False
+      Visible = False
+    end
+    object rdgpCondicao: TRadioGroup
+      Left = 248
+      Height = 78
+      Top = 193
+      Width = 85
+      AutoFill = True
+      Caption = 'Condição'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 58
+      ClientWidth = 81
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Items.Strings = (
+        'E'
+        'OU'
+      )
+      OnSelectionChanged = rdgpCondicaoSelectionChanged
+      ParentFont = False
+      TabOrder = 1
+    end
+    object cbbxCriterio: TComboBox
+      Left = 253
+      Height = 21
+      Top = 26
+      Width = 218
+      ItemHeight = 15
+      Items.Strings = (
+        ''
+        'é igual a'
+        'é diferente de'
+        'é maior que'
+        'é menor que'
+        'é maior ou igual a'
+        'é menor ou igual a'
+        'possui'
+        'não possui'
+        'contém'
+        'não contém'
+        'está entre'
+        'não está entre'
+        'é nulo'
+        'não é nulo'
+        'é verdadeiro'
+        'é falso'
+      )
+      OnChange = cbbxCriterioChange
+      Style = csOwnerDrawFixed
+      TabOrder = 2
+    end
+    object edtValor: TEdit
+      Left = 253
+      Height = 23
+      Top = 77
+      Width = 218
+      TabOrder = 3
+    end
+    object edtValorFinal: TEdit
+      Left = 253
+      Height = 23
+      Top = 128
+      Width = 218
+      TabOrder = 4
+      Visible = False
+    end
+    object btnIncluir: TButton
+      Left = 391
+      Height = 24
+      Top = 192
+      Width = 80
+      Caption = '&Incluir'
+      OnClick = btnIncluirClick
+      TabOrder = 5
+    end
+    object btnModificar: TButton
+      Left = 391
+      Height = 24
+      Top = 220
+      Width = 80
+      Caption = '&Modificar'
+      OnClick = btnModificarClick
+      TabOrder = 6
+    end
+    object btnAgrupar: TButton
+      Left = 391
+      Height = 24
+      Top = 247
+      Width = 80
+      Caption = '&Agrupar'
+      OnClick = btnAgruparClick
+      TabOrder = 7
+    end
+    object edtPesquisar: TEdit
+      Left = 65
+      Height = 23
+      Top = 26
+      Width = 141
+      OnKeyUp = edtPesquisarKeyUp
+      TabOrder = 8
+    end
+    object lblCriterioSelecionado: TLabel
+      Left = 296
+      Height = 15
+      Top = 8
+      Width = 116
+      Caption = 'lblCriterioSelecionado'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -12
+      Font.Name = 'Segoe UI Semibold'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object sbtnPesquisar: TSpeedButton
+      Left = 207
+      Height = 24
+      Hint = 'Pesquisar campo'
+      Top = 26
+      Width = 24
+      OnClick = sbtnPesquisarClick
+    end
+  end
+  object gpbxExpressao: TGroupBox
+    Left = 8
+    Height = 184
+    Top = 320
+    Width = 483
+    Caption = 'Expressão'
+    ClientHeight = 164
+    ClientWidth = 479
+    TabOrder = 1
+    object pnlComandosExpressao: TPanel
+      Left = 0
+      Height = 22
+      Top = 0
+      Width = 479
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 22
+      ClientWidth = 479
+      TabOrder = 0
+      object sbtnSubir: TSpeedButton
+        Left = 8
+        Height = 20
+        Hint = 'Subir'
+        Top = 1
+        Width = 20
+        OnClick = sbtnSubirClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object sbtnDescer: TSpeedButton
+        Left = 25
+        Height = 20
+        Hint = 'Descer'
+        Top = 1
+        Width = 20
+        OnClick = sbtnDescerClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object Bevel2: TBevel
+        Left = 51
+        Height = 22
+        Top = 0
+        Width = 2
+      end
+      object sbtnExcluir: TSpeedButton
+        Left = 59
+        Height = 20
+        Hint = 'Excluir linha'
+        Top = 1
+        Width = 20
+        OnClick = sbtnExcluirClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+      object sbtnLimpar: TSpeedButton
+        Left = 76
+        Height = 20
+        Hint = 'Limpar expressão'
+        Top = 1
+        Width = 20
+        OnClick = sbtnLimparClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object dbgExpressao: TDBGrid
+      Left = 8
+      Height = 126
+      Top = 30
+      Width = 463
+      Align = alClient
+      BorderSpacing.Around = 8
+      Color = clWindow
+      Columns = <>
+      DataSource = dsExpressao
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+      TabOrder = 1
+      TitleStyle = tsNative
+      OnDrawColumnCell = dbgExpressaoDrawColumnCell
+      OnKeyDown = dbgExpressaoKeyDown
+      OnSelectEditor = dbgExpressaoSelectEditor
+    end
+  end
+  object btnOk: TButton
+    Left = 249
+    Height = 24
+    Top = 526
+    Width = 80
+    Caption = '&Ok'
+    OnClick = btnOkClick
+    TabOrder = 2
+  end
+  object btnSalvar: TButton
+    Left = 330
+    Height = 24
+    Top = 526
+    Width = 80
+    Caption = '&Salvar'
+    OnClick = btnSalvarClick
+    TabOrder = 3
+  end
+  object btnCancelar: TButton
+    Left = 411
+    Height = 24
+    Top = 526
+    Width = 80
+    Caption = '&Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 4
+  end
+  object sqlqCamposTabela: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    ReadOnly = True
+    Params = <>
+    Macros = <>
+    Left = 88
+    Top = 128
+  end
+  object sqlqExpressao: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 168
+    Top = 408
+  end
+  object dsExpressao: TDataSource
+    DataSet = sqlqExpressao
+    Left = 176
+    Top = 336
+  end
+end

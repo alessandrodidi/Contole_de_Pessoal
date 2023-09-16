@@ -1,0 +1,446 @@
+object frmPerfisUsuarios: TfrmPerfisUsuarios
+  Left = -8
+  Height = 500
+  Top = -8
+  Width = 700
+  Caption = 'Perfis de usuários'
+  ClientHeight = 500
+  ClientWidth = 700
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 700
+    Align = alTop
+    ClientHeight = 30
+    ClientWidth = 700
+    TabOrder = 0
+    object sbtnAtualizar: TSpeedButton
+      Left = 2
+      Height = 24
+      Hint = 'Atualizar'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAtualizarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Bevel1: TBevel
+      Left = 30
+      Height = 25
+      Top = 2
+      Width = 2
+    end
+    object sbtnAddPerfil: TSpeedButton
+      Left = 35
+      Height = 24
+      Hint = 'Adicionar perfil de acesso'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAddPerfilClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnEditPerfil: TSpeedButton
+      Left = 56
+      Height = 24
+      Hint = 'Editar perfil de acesso'
+      Top = 2
+      Width = 24
+      OnClick = sbtnEditPerfilClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnEditarPermissoes: TSpeedButton
+      Left = 77
+      Height = 24
+      Hint = 'Editar permissões do perfil de acesso'
+      Top = 2
+      Width = 24
+      OnClick = sbtnEditarPermissoesClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnCopiarPermissoes: TSpeedButton
+      Left = 98
+      Height = 24
+      Hint = 'Copiar permissões de perfil de acesso'
+      Top = 2
+      Width = 24
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnDelPerfil: TSpeedButton
+      Left = 140
+      Height = 24
+      Hint = 'Excluir perfil de acesso'
+      Top = 2
+      Width = 24
+      OnClick = sbtnDelPerfilClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnReprocAcessos: TSpeedButton
+      Left = 119
+      Height = 24
+      Hint = 'Reprocessar acessos'
+      Top = 2
+      Width = 24
+      OnClick = sbtnReprocAcessosClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object pstConteudo: TPairSplitter
+    Cursor = crDefault
+    Left = 0
+    Height = 470
+    Top = 30
+    Width = 700
+    Align = alClient
+    Position = 200
+    object pstsEsquerdo: TPairSplitterSide
+      Cursor = crArrow
+      Left = 0
+      Height = 470
+      Top = 0
+      Width = 200
+      ClientWidth = 200
+      ClientHeight = 470
+      object pnlEsqTitulo: TPanel
+        Left = 0
+        Height = 26
+        Top = 0
+        Width = 200
+        Align = alTop
+        Caption = 'Perfis de acesso'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object lstvwPerfisAcesso: TListView
+        Left = 0
+        Height = 444
+        Top = 26
+        Width = 200
+        Align = alClient
+        Columns = <        
+          item
+            Caption = 'ID'
+            Visible = False
+            Width = 0
+          end        
+          item
+            AutoSize = True
+            Caption = 'Perfil'
+            Width = 42
+          end        
+          item
+            Caption = 'Status'
+            Visible = False
+            Width = 0
+          end>
+        HideSelection = False
+        ReadOnly = True
+        RowSelect = True
+        ScrollBars = ssAutoBoth
+        ShowColumnHeaders = False
+        TabOrder = 1
+        ViewStyle = vsReport
+        OnCustomDrawSubItem = lstvwPerfisAcessoCustomDrawSubItem
+        OnDblClick = lstvwPerfisAcessoDblClick
+        OnInsert = lstvwPerfisAcessoInsert
+        OnKeyDown = lstvwPerfisAcessoKeyDown
+        OnResize = lstvwPerfisAcessoResize
+        OnSelectItem = lstvwPerfisAcessoSelectItem
+      end
+    end
+    object pstsDireito: TPairSplitterSide
+      Cursor = crArrow
+      Left = 205
+      Height = 470
+      Top = 0
+      Width = 495
+      ClientWidth = 495
+      ClientHeight = 470
+      object gpbxPerfisAcesso: TGroupBox
+        Left = 3
+        Height = 124
+        Top = 4
+        Width = 487
+        Align = alTop
+        BorderSpacing.Left = 3
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 5
+        Caption = 'Perfil de Acesso'
+        ClientHeight = 104
+        ClientWidth = 483
+        TabOrder = 0
+        object lblIDPerfilAcesso: TLabel
+          Left = 10
+          Height = 15
+          Top = 11
+          Width = 11
+          Caption = 'ID'
+          ParentColor = False
+        end
+        object edtIDPerfilAcesso: TEdit
+          Left = 24
+          Height = 23
+          Top = 8
+          Width = 30
+          Alignment = taRightJustify
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object lblPerfilAcesso: TLabel
+          Left = 72
+          Height = 15
+          Top = 11
+          Width = 83
+          Caption = 'Perfil de Acesso'
+          ParentColor = False
+        end
+        object edtPerfilAcesso: TEdit
+          Left = 160
+          Height = 23
+          Top = 8
+          Width = 256
+          MaxLength = 50
+          TabOrder = 1
+        end
+        object ckbxStatus: TCheckBox
+          Left = 424
+          Height = 19
+          Top = 11
+          Width = 48
+          Alignment = taLeftJustify
+          Caption = 'Ativo'
+          TabOrder = 2
+        end
+        object lblDetalhe: TLabel
+          Left = 10
+          Height = 15
+          Top = 43
+          Width = 40
+          Caption = 'Detalhe'
+          ParentColor = False
+        end
+        object mmDetalhe: TMemo
+          Left = 56
+          Height = 50
+          Top = 40
+          Width = 416
+          OnChange = mmDetalheChange
+          ScrollBars = ssAutoVertical
+          TabOrder = 3
+        end
+      end
+      object pnlPermissoes: TPanel
+        Left = 0
+        Height = 292
+        Top = 128
+        Width = 495
+        Align = alClient
+        ClientHeight = 292
+        ClientWidth = 495
+        TabOrder = 1
+        object pnlBasePermissoes: TPanel
+          Left = 1
+          Height = 20
+          Top = 1
+          Width = 493
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 20
+          ClientWidth = 493
+          TabOrder = 0
+          object pnlPermissoesEsqTitulo: TPanel
+            Left = 0
+            Height = 20
+            Top = 0
+            Width = 457
+            Align = alClient
+            BevelOuter = bvNone
+            Caption = 'Permissões'
+            Font.Color = clBackground
+            Font.Height = -12
+            Font.Name = 'Segoe UI Semibold'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold, fsItalic]
+            ParentFont = False
+            TabOrder = 0
+          end
+          object pnlPermissoesDirComandos: TPanel
+            Left = 457
+            Height = 20
+            Top = 0
+            Width = 36
+            Align = alRight
+            BevelOuter = bvNone
+            ClientHeight = 20
+            ClientWidth = 36
+            TabOrder = 1
+            object sbtnExpandirTudo: TSpeedButton
+              Left = 0
+              Height = 18
+              Hint = 'Expandir tudo'
+              Top = 0
+              Width = 18
+              Caption = '+'
+              Flat = True
+              OnClick = sbtnExpandirTudoClick
+              ShowHint = True
+              ParentShowHint = False
+            end
+            object sbtnRecolherTudo: TSpeedButton
+              Left = 18
+              Height = 18
+              Top = 0
+              Width = 18
+              Caption = '-'
+              Flat = True
+              OnClick = sbtnRecolherTudoClick
+              ShowHint = True
+              ParentShowHint = False
+            end
+          end
+        end
+        object tvPermissoes: TTreeView
+          Left = 1
+          Height = 270
+          Top = 21
+          Width = 493
+          Align = alClient
+          ExpandSignType = tvestPlusMinus
+          HideSelection = False
+          ParentFont = False
+          ParentShowHint = False
+          PopupMenu = pmnPermissoesPerfil
+          ReadOnly = True
+          RightClickSelect = True
+          RowSelect = True
+          ScrollBars = ssAutoBoth
+          ShowHint = True
+          StateImages = imglCheckBoxTreeView
+          TabOrder = 1
+          OnClick = tvPermissoesClick
+          OnMouseDown = tvPermissoesMouseDown
+          Options = [tvoAutoItemHeight, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoNoDoubleClickExpand]
+        end
+      end
+      object pnlComandosOper: TPanel
+        Left = 0
+        Height = 50
+        Top = 420
+        Width = 495
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 495
+        TabOrder = 2
+        object sbtnSalvar: TSpeedButton
+          Left = 10
+          Height = 24
+          Top = 5
+          Width = 80
+          Caption = '&Salvar'
+          OnClick = sbtnSalvarClick
+        end
+        object sbtnCancelar: TSpeedButton
+          Left = 90
+          Height = 24
+          Top = 5
+          Width = 80
+          Caption = '&Cancelar'
+          OnClick = sbtnCancelarClick
+        end
+      end
+    end
+  end
+  object sqlqPerfisAcesso: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 40
+    Top = 80
+  end
+  object imglCheckBoxTreeView: TImageList
+    Left = 272
+    Top = 392
+    Bitmap = {
+      4C7A020000001000000010000000FA0000000000000078DAED933B0A83401884
+      7323150B4F612596828A0FB0F202D69EC2235858D8790211B4D0CA4EBC80A858
+      4EF8850413F3502C424206FE6297F996DD65E6743A2E9EE7C1B2ECAE21E6C2D3
+      BA6D5BF47D8FAEEB5E0E79C84BCC92A7FDAD22EF3D4F676F1579FFFC6FF147F3
+      7324BF47FBF3697D5BFFA76902C330BBF35396255CD7459224E0386E175F1405
+      1445816118A8EB7A75FF711C9FB2599641D775A8AA8AAAAA1EE68F3C4110CC7F
+      B3549AA6304D139AA621CFF3A7F9279F2449F03C0F4DD35C59CBB26696CE7FD5
+      9F611810C731445184EFFB88A2088EE3ACD877FD254E9665088200DBB657EC96
+      FE876138BFE311FBEFFFADCE8A70DEC0
+    }
+  end
+  object sqlqBasePermissoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 272
+    Top = 208
+  end
+  object sqlqPermissoesPerfilAcesso: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 432
+    Top = 208
+  end
+  object pmnPermissoesPerfil: TPopupMenu
+    AutoPopup = False
+    OnPopup = pmnPermissoesPerfilPopup
+    Left = 392
+    Top = 392
+    object mniSelecionarTudo: TMenuItem
+      Caption = '&Selecionar tudo'
+      OnClick = mniSelecionarTudoClick
+    end
+    object mniDeselecionarTudo: TMenuItem
+      Caption = '&Deselecionar tudo'
+      OnClick = mniDeselecionarTudoClick
+    end
+    object LN1: TMenuItem
+      Caption = '-'
+    end
+    object mniSelecionarTodosItens: TMenuItem
+      Caption = 'Selecionato todos os itens'
+      OnClick = mniSelecionarTodosItensClick
+    end
+    object mniDeselecionarTodosItens: TMenuItem
+      Caption = 'Deselecionar todos os itens'
+      OnClick = mniDeselecionarTodosItensClick
+    end
+  end
+end

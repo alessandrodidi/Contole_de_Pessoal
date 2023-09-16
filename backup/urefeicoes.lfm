@@ -1,0 +1,244 @@
+object frmRefeicoes: TfrmRefeicoes
+  Left = 289
+  Height = 387
+  Top = 128
+  Width = 700
+  Caption = 'Refeições'
+  ClientHeight = 387
+  ClientWidth = 700
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  object dbgRefeicoes: TDBGrid
+    Left = 5
+    Height = 289
+    Top = 93
+    Width = 690
+    Align = alClient
+    BorderSpacing.Around = 5
+    Color = clWindow
+    Columns = <>
+    DataSource = dsRefeicoes
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    TitleStyle = tsNative
+    OnMouseLeave = dbgRefeicoesMouseLeave
+    OnMouseMove = dbgRefeicoesMouseMove
+    OnPrepareCanvas = dbgRefeicoesPrepareCanvas
+    OnTitleClick = dbgRefeicoesTitleClick
+  end
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 700
+    Align = alTop
+    ClientHeight = 28
+    ClientWidth = 700
+    TabOrder = 1
+    object sbtnAtualizar: TSpeedButton
+      Left = 2
+      Height = 24
+      Hint = 'Atualizar'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAtualizarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnAbrirPeriodo: TSpeedButton
+      Left = 35
+      Height = 24
+      Hint = 'Abrir novo período'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAbrirPeriodoClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Bevel1: TBevel
+      Left = 30
+      Height = 25
+      Top = 1
+      Width = 2
+    end
+    object sbtnEditarPeriodo: TSpeedButton
+      Left = 56
+      Height = 24
+      Hint = 'Editar dados do período'
+      Top = 2
+      Width = 24
+      OnClick = sbtnEditarPeriodoClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnEncerrarPeriodo: TSpeedButton
+      Left = 77
+      Height = 24
+      Hint = 'Encerrar período'
+      Top = 2
+      Width = 24
+      OnClick = sbtnEncerrarPeriodoClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnRegRefeicoesTerminal: TSpeedButton
+      Left = 110
+      Height = 24
+      Hint = 'Abrir terminal para registro de refeições'
+      Top = 2
+      Width = 24
+      OnClick = sbtnRegRefeicoesTerminalClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Bevel2: TBevel
+      Left = 105
+      Height = 25
+      Top = 1
+      Width = 2
+    end
+    object sbtnRegRefeicoesManual: TSpeedButton
+      Left = 131
+      Height = 24
+      Hint = 'Lançar refeições manualmente'
+      Top = 2
+      Width = 24
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object pnlCampos: TPanel
+    Left = 0
+    Height = 60
+    Top = 28
+    Width = 700
+    Align = alTop
+    ClientHeight = 60
+    ClientWidth = 700
+    TabOrder = 2
+    object lblRefeicao: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 45
+      Caption = 'Refeição'
+      ParentColor = False
+    end
+    object lkcbHorariosRefeicoes: TDBLookupComboBox
+      Left = 8
+      Height = 24
+      Top = 26
+      Width = 216
+      ListFieldIndex = 0
+      ListSource = dsHorariosRefeicoes
+      LookupCache = False
+      OnDropDown = lkcbHorariosRefeicoesDropDown
+      OnSelect = lkcbHorariosRefeicoesSelect
+      ReadOnly = True
+      Style = csOwnerDrawFixed
+      TabOrder = 0
+    end
+    object sbtnSalvar: TSpeedButton
+      Left = 536
+      Height = 24
+      Top = 32
+      Width = 80
+      Caption = '&Salvar'
+      OnClick = sbtnSalvarClick
+    end
+    object sbtnCancelar: TSpeedButton
+      Left = 616
+      Height = 24
+      Top = 32
+      Width = 80
+      Caption = '&Cancelar'
+      OnClick = sbtnCancelarClick
+    end
+    object lblHorario: TLabel
+      Left = 270
+      Height = 15
+      Top = 8
+      Width = 40
+      Caption = 'Horário'
+      ParentColor = False
+    end
+    object medtHorario: TMaskEdit
+      Left = 270
+      Height = 23
+      Hint = 'Duplo clique para editar'
+      Top = 26
+      Width = 40
+      Alignment = taCenter
+      CharCase = ecNormal
+      MaxLength = 5
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 1
+      OnDblClick = medtHorarioDblClick
+      OnKeyPress = medtHorarioKeyPress
+      OnMouseLeave = medtHorarioMouseLeave
+      EditMask = '00:00;1;_'
+      Text = '  :  '
+      SpaceChar = '_'
+    end
+    object sbtnHorario: TSpeedButton
+      Left = 222
+      Height = 26
+      Hint = 'Cadastro de horários de refeições'
+      Top = 25
+      Width = 25
+      OnClick = sbtnHorarioClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object sqlqHorariosRefeicoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 208
+    Top = 136
+  end
+  object sqlqRefeicoesOperacao: TSQLQuery
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoAutoCommit]
+    Params = <>
+    Left = 488
+    Top = 136
+  end
+  object dsRefeicoes: TDataSource
+    DataSet = sqlqRefeicoes
+    Left = 368
+    Top = 184
+  end
+  object sqlqRefeicoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 368
+    Top = 136
+  end
+  object dsHorariosRefeicoes: TDataSource
+    DataSet = sqlqHorariosRefeicoes
+    Left = 208
+    Top = 184
+  end
+  object sqlqParametros: TSQLQuery
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Left = 56
+    Top = 136
+  end
+end

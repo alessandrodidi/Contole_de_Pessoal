@@ -1,0 +1,548 @@
+object frmGerencFotos: TfrmGerencFotos
+  Left = 2459
+  Height = 550
+  Top = 245
+  Width = 700
+  Caption = 'Gerenciador de fotos'
+  ClientHeight = 550
+  ClientWidth = 700
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 700
+    Align = alTop
+    ClientHeight = 30
+    ClientWidth = 700
+    TabOrder = 0
+    object sbtnAtualizar: TSpeedButton
+      Left = 2
+      Height = 24
+      Hint = 'Atualizar'
+      Top = 2
+      Width = 24
+      OnClick = sbtnAtualizarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Bevel1: TBevel
+      Left = 30
+      Height = 25
+      Top = 2
+      Width = 2
+    end
+    object sbtnEditarFoto: TSpeedButton
+      Left = 56
+      Height = 24
+      Hint = 'Editar foto'
+      Top = 2
+      Width = 24
+      OnClick = sbtnEditarFotoClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnExcluirFoto: TSpeedButton
+      Left = 77
+      Height = 24
+      Hint = 'Excluir foto'
+      Top = 2
+      Width = 24
+      OnClick = sbtnExcluirFotoClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbtnLocalizarPessoa: TSpeedButton
+      Left = 109
+      Height = 24
+      Hint = 'Localizar pessoa'
+      Top = 2
+      Width = 24
+      OnClick = sbtnLocalizarPessoaClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object bcbtnAddFoto: TBCButton
+      Left = 36
+      Height = 22
+      Hint = 'Adicionar nova foto'
+      Top = 3
+      Width = 22
+      StateClicked.Background.Color = 16245964
+      StateClicked.Background.Gradient1.StartColor = 16577765
+      StateClicked.Background.Gradient1.EndColor = 16180676
+      StateClicked.Background.Gradient1.GradientType = gtLinear
+      StateClicked.Background.Gradient1.Point1XPercent = 0
+      StateClicked.Background.Gradient1.Point1YPercent = 0
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 100
+      StateClicked.Background.Gradient2.StartColor = 15716760
+      StateClicked.Background.Gradient2.EndColor = 14398312
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 55
+      StateClicked.Background.Style = bbsColor
+      StateClicked.Border.Color = 10048512
+      StateClicked.Border.LightColor = clBlack
+      StateClicked.Border.LightOpacity = 100
+      StateClicked.Border.Style = bboSolid
+      StateClicked.FontEx.Color = clBlack
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = False
+      StateClicked.FontEx.ShadowRadius = 5
+      StateClicked.FontEx.ShadowOffsetX = 5
+      StateClicked.FontEx.ShadowOffsetY = 5
+      StateClicked.FontEx.Style = []
+      StateHover.Background.Color = 16511461
+      StateHover.Background.Gradient1.StartColor = 16643818
+      StateHover.Background.Gradient1.EndColor = 16576729
+      StateHover.Background.Gradient1.GradientType = gtLinear
+      StateHover.Background.Gradient1.Point1XPercent = 0
+      StateHover.Background.Gradient1.Point1YPercent = 0
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 100
+      StateHover.Background.Gradient2.StartColor = 16639678
+      StateHover.Background.Gradient2.EndColor = 16112039
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 50
+      StateHover.Background.Style = bbsColor
+      StateHover.Border.Color = 14120960
+      StateHover.Border.LightOpacity = 200
+      StateHover.Border.Style = bboSolid
+      StateHover.FontEx.Color = clBlack
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = False
+      StateHover.FontEx.ShadowRadius = 5
+      StateHover.FontEx.ShadowOffsetX = 5
+      StateHover.FontEx.ShadowOffsetY = 5
+      StateHover.FontEx.Style = []
+      StateNormal.Background.Color = 14803425
+      StateNormal.Background.Gradient1.StartColor = 15921906
+      StateNormal.Background.Gradient1.EndColor = 15461355
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 14540253
+      StateNormal.Background.Gradient2.EndColor = 13619151
+      StateNormal.Background.Gradient2.GradientType = gtLinear
+      StateNormal.Background.Gradient2.Point1XPercent = 0
+      StateNormal.Background.Gradient2.Point1YPercent = 0
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 100
+      StateNormal.Background.Gradient1EndPercent = 50
+      StateNormal.Background.Style = bbsColor
+      StateNormal.Border.Color = 11382189
+      StateNormal.Border.LightOpacity = 200
+      StateNormal.Border.Style = bboSolid
+      StateNormal.FontEx.Color = clBlack
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Shadow = False
+      StateNormal.FontEx.ShadowRadius = 5
+      StateNormal.FontEx.ShadowOffsetX = 5
+      StateNormal.FontEx.ShadowOffsetY = 5
+      StateNormal.FontEx.Style = []
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      GlyphMargin = 0
+      ParentColor = False
+      Rounding.RoundX = 0
+      Rounding.RoundY = 0
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      ShowHint = True
+      TextApplyGlobalOpacity = False
+      DropDownMenu = ppmnAddFoto
+      MemoryUsage = bmuHigh
+    end
+  end
+  object pstConteudo: TPairSplitter
+    Cursor = crDefault
+    Left = 0
+    Height = 520
+    Top = 30
+    Width = 700
+    Align = alClient
+    Position = 245
+    object pstsEsquerdo: TPairSplitterSide
+      Cursor = crArrow
+      Left = 0
+      Height = 520
+      Top = 0
+      Width = 245
+      ClientWidth = 245
+      ClientHeight = 520
+      object pnlEsqTitulo: TPanel
+        Left = 0
+        Height = 24
+        Top = 0
+        Width = 245
+        Align = alTop
+        Caption = 'Fotos'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object dbgFotos: TDBGrid
+        Left = 0
+        Height = 496
+        Top = 24
+        Width = 245
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'ID'
+            Width = 40
+          end        
+          item
+            Title.Caption = 'ID_FOTO'
+            Width = 0
+          end        
+          item
+            Title.Caption = 'ID_PESSOA'
+            Width = 0
+          end        
+          item
+            Title.Caption = 'FOTO'
+            Width = 0
+          end        
+          item
+            Title.Caption = 'DT INÍCIO'
+            Width = 70
+          end        
+          item
+            Title.Caption = 'DT FIM'
+            Width = 70
+          end        
+          item
+            Title.Caption = 'ATIVO'
+            Width = 40
+          end        
+          item
+            Title.Caption = 'NOME'
+            Width = 0
+          end>
+        DataSource = dsFotos
+        FixedCols = 0
+        Options = [dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        ReadOnly = True
+        Scrollbars = ssAutoBoth
+        TabOrder = 1
+        TitleStyle = tsNative
+        OnSelectEditor = dbgFotosSelectEditor
+        OnTitleClick = dbgFotosTitleClick
+      end
+    end
+    object pstsDireito: TPairSplitterSide
+      Cursor = crArrow
+      Left = 250
+      Height = 520
+      Top = 0
+      Width = 450
+      ClientWidth = 450
+      ClientHeight = 520
+      object gpbxInfoFoto: TGroupBox
+        Left = 3
+        Height = 86
+        Top = 4
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 3
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 5
+        Caption = 'Informações'
+        ClientHeight = 66
+        ClientWidth = 438
+        TabOrder = 0
+        object lblIdFoto: TLabel
+          Left = 8
+          Height = 15
+          Top = 9
+          Width = 11
+          Caption = 'ID'
+          ParentColor = False
+        end
+        object lblDataInicio: TLabel
+          Left = 79
+          Height = 15
+          Top = 9
+          Width = 56
+          Caption = 'Data início'
+          ParentColor = False
+        end
+        object lblDataFim: TLabel
+          Left = 235
+          Height = 15
+          Top = 9
+          Width = 45
+          Caption = 'Data fim'
+          ParentColor = False
+        end
+        object edtIdFoto: TEdit
+          Left = 24
+          Height = 23
+          Top = 5
+          Width = 30
+          Alignment = taRightJustify
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object medtDataInicio: TMaskEdit
+          Left = 140
+          Height = 23
+          Top = 5
+          Width = 69
+          Alignment = taRightJustify
+          Enabled = False
+          MaxLength = 10
+          TabOrder = 1
+          EditMask = '!99/99/0000;1;_'
+          Text = '  /  /    '
+          SpaceChar = '_'
+        end
+        object medtDataFim: TMaskEdit
+          Left = 284
+          Height = 23
+          Top = 5
+          Width = 69
+          Alignment = taRightJustify
+          Enabled = False
+          MaxLength = 10
+          TabOrder = 2
+          EditMask = '!99/99/0000;1;_'
+          Text = '  /  /    '
+          SpaceChar = '_'
+        end
+        object ckbxStatus: TCheckBox
+          Left = 386
+          Height = 19
+          Top = 6
+          Width = 48
+          Caption = 'Ativo'
+          Enabled = False
+          TabOrder = 3
+        end
+        object lblDimensoesFoto: TLabel
+          Left = 8
+          Height = 15
+          Top = 41
+          Width = 61
+          Caption = 'Dimensões:'
+          ParentColor = False
+        end
+        object lblDimensoes: TLabel
+          Left = 72
+          Height = 15
+          Top = 41
+          Width = 117
+          Caption = 'Largura x Altura pixels'
+          ParentColor = False
+        end
+      end
+      object pnlComandosOper: TPanel
+        Left = 0
+        Height = 50
+        Top = 470
+        Width = 450
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 450
+        TabOrder = 1
+        object sbtnSalvar: TSpeedButton
+          Left = 10
+          Height = 24
+          Top = 5
+          Width = 80
+          Caption = '&Salvar'
+          OnClick = sbtnSalvarClick
+        end
+        object sbtnCancelar: TSpeedButton
+          Left = 90
+          Height = 24
+          Top = 5
+          Width = 80
+          Caption = '&Cancelar'
+        end
+      end
+      object gpbxPreview: TGroupBox
+        Left = 3
+        Height = 376
+        Top = 94
+        Width = 442
+        Align = alClient
+        BorderSpacing.Left = 3
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 5
+        Caption = 'Preview'
+        ClientHeight = 356
+        ClientWidth = 438
+        TabOrder = 2
+        object imgPreviewFoto: TImage
+          Left = 8
+          Height = 308
+          Top = 5
+          Width = 424
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 8
+          BorderSpacing.Right = 5
+          BorderSpacing.Bottom = 5
+          OnClick = imgPreviewFotoClick
+          ParentShowHint = False
+          Proportional = True
+        end
+        object pnlComandosFoto: TPanel
+          Left = 0
+          Height = 30
+          Top = 326
+          Width = 438
+          Align = alBottom
+          ClientHeight = 30
+          ClientWidth = 438
+          TabOrder = 0
+          object sbtnAjustarATela: TSpeedButton
+            Left = 8
+            Height = 23
+            Hint = 'Ajustar imagem a tela'
+            Top = 2
+            Width = 23
+            OnClick = sbtnAjustarATelaClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object sbtnAumentarZoom: TSpeedButton
+            Left = 79
+            Height = 23
+            Hint = 'Aumentar Zoom'
+            Top = 2
+            Width = 23
+            OnClick = sbtnAumentarZoomClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object sbtnDiminuirZoom: TSpeedButton
+            Left = 28
+            Height = 23
+            Hint = 'Diminuir Zoom'
+            Top = 2
+            Width = 23
+            OnClick = sbtnDiminuirZoomClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object sbtnTamanhoReal: TSpeedButton
+            Left = 99
+            Height = 23
+            Hint = 'Tamanho real'
+            Top = 2
+            Width = 23
+            OnClick = sbtnTamanhoRealClick
+            ShowHint = True
+            ParentShowHint = False
+          end
+          object edtZoom: TEdit
+            Left = 49
+            Height = 21
+            Hint = '% Zoom'
+            Top = 3
+            Width = 32
+            Alignment = taCenter
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Segoe UI'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 3
+            NumbersOnly = True
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+            Text = '100'
+          end
+        end
+      end
+    end
+  end
+  object Bevel2: TBevel
+    Left = 105
+    Height = 25
+    Top = 2
+    Width = 2
+  end
+  object sqlqFotos: TSQLQuery
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    ReadOnly = True
+    Params = <>
+    Macros = <>
+    Left = 48
+    Top = 208
+  end
+  object dsFotos: TDataSource
+    DataSet = sqlqFotos
+    Left = 112
+    Top = 208
+  end
+  object ppmnAddFoto: TPopupMenu
+    Left = 72
+    Top = 128
+    object ppmniCapturarFoto: TMenuItem
+      Caption = '&Capturar nova foto'
+      OnClick = ppmniCapturarFotoClick
+    end
+    object ppmniAbrirFoto: TMenuItem
+      Caption = '&Abrir foto salva'
+      OnClick = ppmniAbrirFotoClick
+    end
+  end
+  object opdAbrirFoto: TOpenPictureDialog
+    Title = 'Abrir foto'
+    Filter = 'Arquivos de imagem (*.jpeg;*.jpg;*.png;*.bmp)|*.jpeg;*.jpg;*.png;*.bmp'
+    Options = [ofEnableSizing, ofViewDetail, ofAutoPreview]
+    Left = 160
+    Top = 136
+  end
+  object sqlqFotosOperacoes: TSQLQuery
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 80
+    Top = 298
+    object sqlqFotosOperacoesid_pessoa: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_pessoa'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

@@ -1,0 +1,119 @@
+object frmAlterarSenha: TfrmAlterarSenha
+  Left = 2526
+  Height = 154
+  Top = 363
+  Width = 386
+  BorderStyle = bsDialog
+  Caption = 'Alterar senha'
+  ClientHeight = 154
+  ClientWidth = 386
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
+  object sbtnConfirmar: TSpeedButton
+    Left = 216
+    Height = 24
+    Top = 124
+    Width = 80
+    Caption = '&Ok'
+    OnClick = sbtnConfirmarClick
+  end
+  object sbtnCancelar: TSpeedButton
+    Left = 296
+    Height = 24
+    Top = 124
+    Width = 80
+    Caption = '&Cancelar'
+    OnClick = sbtnCancelarClick
+  end
+  object edtRepeteNovaSenha: TEdit
+    Left = 213
+    Height = 23
+    Top = 72
+    Width = 140
+    EchoMode = emPassword
+    OnKeyPress = edtRepeteNovaSenhaKeyPress
+    PasswordChar = '*'
+    TabOrder = 2
+  end
+  object ckbxForcarTrocarSenha: TCheckBox
+    Left = 146
+    Height = 19
+    Top = 74
+    Width = 216
+    Caption = 'Forçar trocar senha no próximo login'
+    OnChange = ckbxForcarTrocarSenhaChange
+    TabOrder = 3
+  end
+  object lblNovaSenha: TLabel
+    Left = 146
+    Height = 15
+    Top = 45
+    Width = 62
+    Caption = 'Nova senha'
+    ParentColor = False
+  end
+  object edtNovaSenha: TEdit
+    Left = 213
+    Height = 23
+    Top = 41
+    Width = 140
+    EchoMode = emPassword
+    OnKeyPress = edtNovaSenhaKeyPress
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object sbtnMostarNovaSenha: TSpeedButton
+    Left = 351
+    Height = 25
+    Hint = 'Mantenha pressionado para mostrar a ''Nova senha'''
+    Top = 40
+    Width = 25
+    OnMouseDown = sbtnMostarNovaSenhaMouseDown
+    OnMouseUp = sbtnMostarNovaSenhaMouseUp
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object sbtnMostarSenhaAtual: TSpeedButton
+    Left = 351
+    Height = 25
+    Hint = 'Mantenha pressionado para ver a ''Senha atual'''
+    Top = 9
+    Width = 25
+    OnMouseDown = sbtnMostarSenhaAtualMouseDown
+    OnMouseUp = sbtnMostarSenhaAtualMouseUp
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object edtSenhaAtual: TEdit
+    Left = 213
+    Height = 23
+    Top = 10
+    Width = 140
+    EchoMode = emPassword
+    OnKeyPress = edtSenhaAtualKeyPress
+    PasswordChar = '*'
+    TabOrder = 0
+  end
+  object lblSenhaAtual: TLabel
+    Left = 146
+    Height = 15
+    Top = 14
+    Width = 61
+    Caption = 'Senha atual'
+    ParentColor = False
+  end
+  object sqlqAltSenha: TSQLQuery
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Options = [sqoAutoCommit]
+    Params = <>
+    Macros = <>
+    Left = 152
+    Top = 106
+  end
+end

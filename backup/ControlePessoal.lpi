@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="ControlePessoal"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages Count="7">
+      <Item1>
+        <PackageName Value="laz.virtualtreeview_package"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="laz_synapse"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="RunTimeTypeInfoControls"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="bgracontrols"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LazControls"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="FCL"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
+    </RequiredPackages>
+    <Units Count="25">
+      <Unit0>
+        <Filename Value="ControlePessoal.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ulogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ULogin"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ugfunc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UGFunc"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uinifiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UINIFiles"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="udbo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDBO"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uconexao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmConexao"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UConexao"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="experttabsheet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExpertTabSheet"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsuarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UUsuarios"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ualterarsenha.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAlterarSenha"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAlterarSenha"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uregrefeicoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRegRefeicoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="URegRefeicoes"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ucadhorariosrefeicoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadHorariosRefeicoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCadHorariosRefeicoes"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="ucadpessoas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadPessoas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCadPessoas"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="uvinculospessoas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmVinculos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UVinculosPessoas"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="ugerencfotos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGerencFotos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UGerencFotos"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="upesquisar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPesquisar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UPesquisar"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ureglogssistema.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRegLogsSistema"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="URegLogsSistema"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="ubtntabsheet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uBtnTabSheet"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="ufiltros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmFiltros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFiltros"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="ueditorcadfiltros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmEditorCadFiltros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UEditorCadFiltros"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="urestricaoacesso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRestricaoAcesso"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="URestricaoAcesso"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="ueditorfiltros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmEditorFiltros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UEditorFiltros"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="uexecutafiltro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmExecutaFiltro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UExecutaFiltro"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="uperfisusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPerfisUsuarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UPerfisUsuarios"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="uframeaviso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fraAviso"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="UFrameAviso"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCopiarPermissoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCopiarPermissoes"/>
+      </Unit24>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="ControlePessoal"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="RunError(219)"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

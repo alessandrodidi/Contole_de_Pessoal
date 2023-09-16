@@ -1,0 +1,180 @@
+object frmLocalizarCadPessoa: TfrmLocalizarCadPessoa
+  Left = 402
+  Height = 300
+  Top = 253
+  Width = 500
+  BorderStyle = bsDialog
+  Caption = 'Localizar cadastro'
+  ClientHeight = 300
+  ClientWidth = 500
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.10.0'
+  object gpbxCristeriosBusca: TGroupBox
+    Left = 5
+    Height = 70
+    Top = 5
+    Width = 490
+    Align = alTop
+    BorderSpacing.Around = 5
+    Caption = 'Critérios da busca'
+    ClientHeight = 50
+    ClientWidth = 486
+    TabOrder = 0
+    object lblCampo: TLabel
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 39
+      Caption = 'Campo'
+      ParentColor = False
+    end
+    object cbCampo: TComboBox
+      Left = 8
+      Height = 21
+      Top = 20
+      Width = 85
+      ItemHeight = 15
+      Items.Strings = (
+        'ID'
+        'Nome'
+        'CPF'
+      )
+      Style = csOwnerDrawFixed
+      TabOrder = 0
+    end
+    object lblValor: TLabel
+      Left = 200
+      Height = 15
+      Top = 0
+      Width = 26
+      Caption = 'Valor'
+      ParentColor = False
+    end
+    object edtValor: TEdit
+      Left = 200
+      Height = 23
+      Top = 19
+      Width = 226
+      ParentShowHint = False
+      TabOrder = 1
+    end
+    object spbnPesquisar: TSpeedButton
+      Left = 436
+      Height = 24
+      Hint = 'Pesquisar'
+      Top = 18
+      Width = 24
+      OnClick = spbnPesquisarClick
+    end
+    object lblCriterio: TLabel
+      Left = 104
+      Height = 15
+      Top = 0
+      Width = 39
+      Caption = 'Critério'
+      ParentColor = False
+    end
+    object cbCriterio: TComboBox
+      Left = 104
+      Height = 21
+      Top = 20
+      Width = 85
+      ItemHeight = 15
+      Items.Strings = (
+        'é igual'
+        'não é igual'
+        'contém'
+        'não contém'
+        'é nulo'
+        'não é nulo'
+        'está entre'
+        'não está entre'
+      )
+      OnChange = cbCriterioChange
+      Style = csOwnerDrawFixed
+      TabOrder = 2
+    end
+    object sbtnLimparPesquisa: TSpeedButton
+      Left = 457
+      Height = 24
+      Hint = 'Limpar pesquisa'
+      Top = 18
+      Width = 24
+      OnClick = sbtnLimparPesquisaClick
+    end
+  end
+  object gpbxResultadosBusca: TGroupBox
+    Left = 5
+    Height = 210
+    Top = 85
+    Width = 490
+    Align = alClient
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
+    Caption = 'Resultados da busca'
+    ClientHeight = 190
+    ClientWidth = 486
+    TabOrder = 1
+    object pnlComandos: TPanel
+      Left = 5
+      Height = 28
+      Top = 0
+      Width = 476
+      Align = alTop
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
+      BevelOuter = bvNone
+      ClientHeight = 28
+      ClientWidth = 476
+      TabOrder = 0
+      object sbtnSelecionar: TSpeedButton
+        Left = 0
+        Height = 24
+        Hint = 'Selecionar cadastro'
+        Top = 2
+        Width = 24
+        OnClick = sbtnSelecionarClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object dbgResultadoBusca: TDBGrid
+      Left = 5
+      Height = 157
+      Top = 28
+      Width = 476
+      Align = alClient
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 5
+      Color = clWindow
+      Columns = <>
+      DataSource = dsBuscaCadPessoa
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      TabOrder = 1
+      TitleStyle = tsNative
+      OnMouseLeave = dbgResultadoBuscaMouseLeave
+      OnMouseMove = dbgResultadoBuscaMouseMove
+      OnTitleClick = dbgResultadoBuscaTitleClick
+    end
+  end
+  object dsBuscaCadPessoa: TDataSource
+    DataSet = sqlqBuscaCadPessoa
+    Left = 113
+    Top = 167
+  end
+  object sqlqBuscaCadPessoa: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqlqTransactions
+    ReadOnly = True
+    Params = <>
+    Left = 224
+    Top = 167
+  end
+end

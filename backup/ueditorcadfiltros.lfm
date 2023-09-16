@@ -1,0 +1,100 @@
+object frmEditorCadFiltros: TfrmEditorCadFiltros
+  Left = 2170
+  Height = 159
+  Top = 250
+  Width = 477
+  BorderStyle = bsDialog
+  Caption = 'Editar filtro'
+  ClientHeight = 159
+  ClientWidth = 477
+  FormStyle = fsSystemStayOnTop
+  KeyPreview = True
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  object lblFiltro: TLabel
+    Left = 8
+    Height = 15
+    Top = 11
+    Width = 27
+    Caption = 'Filtro'
+    ParentColor = False
+  end
+  object edtNomeFiltro: TEdit
+    Left = 40
+    Height = 23
+    Top = 8
+    Width = 312
+    MaxLength = 50
+    OnKeyPress = edtNomeFiltroKeyPress
+    TabOrder = 0
+  end
+  object ckbxFiltroGlobal: TCheckBox
+    Left = 384
+    Height = 19
+    Hint = 'Um filtro global pode ser visualizado por todos os usuários'#13#10'(Ctrl + G)'
+    Top = 11
+    Width = 83
+    Caption = 'Filtro global'
+    OnKeyDown = ckbxFiltroGlobalKeyDown
+    OnMouseDown = ckbxFiltroGlobalMouseDown
+    TabOrder = 1
+  end
+  object btnSalvar: TButton
+    Left = 304
+    Height = 24
+    Hint = '(Ctrl + S)'
+    Top = 123
+    Width = 80
+    Caption = '&Salvar'
+    OnClick = btnSalvarClick
+    TabOrder = 3
+  end
+  object btnCancelar: TButton
+    Left = 385
+    Height = 24
+    Top = 123
+    Width = 80
+    Caption = '&Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 4
+  end
+  object lblDetalhes: TLabel
+    Left = 8
+    Height = 15
+    Top = 44
+    Width = 45
+    Caption = 'Detalhes'
+    ParentColor = False
+  end
+  object mmDetalhes: TMemo
+    Left = 8
+    Height = 40
+    Top = 64
+    Width = 456
+    MaxLength = 255
+    OnKeyPress = mmDetalhesKeyPress
+    ScrollBars = ssAutoVertical
+    TabOrder = 2
+  end
+  object btnOK: TButton
+    Left = 223
+    Height = 24
+    Top = 123
+    Width = 80
+    Caption = '&Ok'
+    OnClick = btnOKClick
+    TabOrder = 5
+  end
+  object sqlqFiltro: TSQLQuery
+    PacketRecords = 1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 80
+    Top = 80
+  end
+end

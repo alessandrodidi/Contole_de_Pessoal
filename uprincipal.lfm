@@ -1,0 +1,251 @@
+object frmPrincipal: TfrmPrincipal
+  Left = -8
+  Height = 735
+  Top = -8
+  Width = 1020
+  Caption = 'Controle de Pessoal'
+  ClientHeight = 712
+  ClientWidth = 1020
+  Constraints.MinHeight = 510
+  Constraints.MinWidth = 710
+  KeyPreview = True
+  Menu = mmnMenu
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  WindowState = wsMaximized
+  object pnlComandos: TPanel
+    Left = 0
+    Height = 52
+    Top = 0
+    Width = 1020
+    Align = alTop
+    TabOrder = 0
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 689
+    Width = 1020
+    Panels = <    
+      item
+        Alignment = taRightJustify
+        Width = 200
+      end    
+      item
+        Alignment = taRightJustify
+        Width = 200
+      end    
+      item
+        Alignment = taRightJustify
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object PageControl: TPageControl
+    Left = 0
+    Height = 637
+    Top = 52
+    Width = 1020
+    ActivePage = tsInicio
+    Align = alClient
+    MultiLine = True
+    TabIndex = 0
+    TabOrder = 2
+    OnDragDrop = PageControlDragDrop
+    OnDragOver = PageControlDragOver
+    OnMouseDown = PageControlMouseDown
+    OnMouseLeave = PageControlMouseLeave
+    OnMouseMove = PageControlMouseMove
+    OnMouseUp = PageControlMouseUp
+    Options = [nboMultiLine, nboKeyboardTabSwitch]
+    object tsInicio: TTabSheet
+      Caption = 'Início'
+    end
+  end
+  object mmnMenu: TMainMenu
+    Left = 616
+    object mniSistema: TMenuItem
+      Caption = '&Sistema'
+      object mniConfiguracoes: TMenuItem
+        Caption = '&Configurações'
+      end
+      object mniSeguranca: TMenuItem
+        Caption = 'Se&gurança'
+        object mniAlterarSenha: TMenuItem
+          Caption = '&Alterar senha'
+          OnClick = mniAlterarSenhaClick
+        end
+        object N2: TMenuItem
+          Caption = '-'
+        end
+        object mniUsuarios: TMenuItem
+          Caption = '&Usuários'
+          OnClick = mniUsuariosClick
+        end
+        object mniPerfisAcesso: TMenuItem
+          Caption = '&Perfis de acesso'
+          OnClick = mniPerfisAcessoClick
+        end
+      end
+      object mniAuditoria: TMenuItem
+        Caption = '&Auditoria'
+        object mniLogsSistema: TMenuItem
+          Caption = 'Registros de &Logs do sistema'
+          OnClick = mniLogsSistemaClick
+        end
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mniLogoff: TMenuItem
+        Caption = '&Logoff'
+        OnClick = mniLogoffClick
+      end
+      object mniSair: TMenuItem
+        Caption = '&Sair'
+        OnClick = mniSairClick
+      end
+    end
+    object mniCadastros: TMenuItem
+      Caption = '&Cadastros'
+      object mniPessoas: TMenuItem
+        Caption = '&Pessoas'
+        object mniCadPessoas: TMenuItem
+          Caption = '&Pessoas'
+          OnClick = mniCadPessoasClick
+        end
+        object mniGerenFotos: TMenuItem
+          Caption = 'Gerenciador de &Fotos'
+          OnClick = mniGerenFotosClick
+        end
+        object N3: TMenuItem
+          Caption = '-'
+        end
+        object mniVinculos: TMenuItem
+          Caption = '&Vínculos Pessoa-Empresa'
+          OnClick = mniVinculosClick
+        end
+        object mniRestricaoAcesso: TMenuItem
+          Caption = '&Restrição de acesso'
+          OnClick = mniRestricaoAcessoClick
+        end
+      end
+      object mniHorariosRefeicoes: TMenuItem
+        Caption = '&Horários de refeições'
+        OnClick = mniHorariosRefeicoesClick
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object mniEmpresas: TMenuItem
+        Caption = '&Empresas'
+      end
+      object mniSetores: TMenuItem
+        Caption = '&Setores'
+      end
+      object mniFuncoes: TMenuItem
+        Caption = '&Funções'
+      end
+      object mniCentrosCusto: TMenuItem
+        Caption = '&Centros de custo'
+      end
+      object mniMotivosVisita: TMenuItem
+        Caption = '&Motivos visita'
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object mniEstados: TMenuItem
+        Caption = 'Esta&dos'
+      end
+      object mniMunicipios: TMenuItem
+        Caption = '&Municípios'
+      end
+      object mniCEP: TMenuItem
+        Caption = 'CEP'
+      end
+      object mniTiposLogradouro: TMenuItem
+        Caption = '&Tipos logradouros'
+      end
+    end
+    object mniPortaria: TMenuItem
+      Caption = '&Portaria'
+      object mniControleAcesso: TMenuItem
+        Caption = 'Controle de &Acesso'
+      end
+    end
+    object mniRefeitorio: TMenuItem
+      Caption = '&Refeitório'
+      object mniRegRefeicoes: TMenuItem
+        Caption = '&Registrar refeições'
+        object mniRegRefeicoesTerminal: TMenuItem
+          Caption = '&Terminal'
+          OnClick = mniRegRefeicoesTerminalClick
+        end
+        object mniRegRefeicoesManual: TMenuItem
+          Caption = '&Manual'
+        end
+      end
+      object mniLibRefeitorio: TMenuItem
+        Caption = '&Liberar refeitório'
+        OnClick = mniLibRefeitorioClick
+      end
+      object MenuItem2: TMenuItem
+        Caption = '-'
+      end
+      object mniExpRegRefeicoes: TMenuItem
+        Caption = '&Exportar registros de refeições'
+      end
+    end
+    object mniRelatorios: TMenuItem
+      Caption = 'Re&latórios'
+    end
+    object mniFerramentas: TMenuItem
+      Caption = '&Ferramentas'
+      object mniImportador: TMenuItem
+        Caption = '&Importador'
+        object mniImportadorTemplates: TMenuItem
+          Caption = '&Templates'
+        end
+        object N5: TMenuItem
+          Caption = '-'
+        end
+      end
+      object mniExportador: TMenuItem
+        Caption = '&Exportador'
+        object mniExportadorTemplates: TMenuItem
+          Caption = '&Templates'
+        end
+        object N9: TMenuItem
+          Caption = '-'
+        end
+      end
+      object mniCracha: TMenuItem
+        Caption = '&Crachá'
+        object mniCrachaTemplates: TMenuItem
+          Caption = '&Templates'
+        end
+        object N8: TMenuItem
+          Caption = '-'
+        end
+      end
+    end
+    object mniAjuda: TMenuItem
+      Caption = '&Ajuda'
+      object mniAjuda2: TMenuItem
+        Caption = '&Ajuda'
+        OnClick = mniAjuda2Click
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object mniSobre: TMenuItem
+        Caption = '&Sobre'
+        OnClick = mniSobreClick
+      end
+    end
+  end
+end
