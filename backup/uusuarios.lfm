@@ -95,11 +95,14 @@ object frmUsuarios: TfrmUsuarios
       Top = 2
       Width = 24
       OnClick = sbtnCopiarPermissoesClick
+      OnMouseDown = sbtnCopiarPermissoesMouseDown
       ShowHint = True
       ParentShowHint = False
+      PopupMenu = pmnCopiarPermissoes
     end
   end
   object pstConteudo: TPairSplitter
+    Cursor = crDefault
     Left = 0
     Height = 470
     Top = 30
@@ -406,6 +409,7 @@ object frmUsuarios: TfrmUsuarios
         end
       end
       object pstPermissoes: TPairSplitter
+        Cursor = crDefault
         Left = 0
         Height = 261
         Top = 159
@@ -989,5 +993,18 @@ object frmUsuarios: TfrmUsuarios
     Macros = <>
     Left = 616
     Top = 40
+  end
+  object pmnCopiarPermissoes: TPopupMenu
+    ParentBidiMode = False
+    AutoPopup = False
+    OnPopup = pmnCopiarPermissoesPopup
+    Left = 72
+    Top = 248
+    object mniCopiarDe: TMenuItem
+      Caption = 'Copiar permissões de...'
+    end
+    object mniCopiarPara: TMenuItem
+      Caption = 'Copiar permissões para...'
+    end
   end
 end

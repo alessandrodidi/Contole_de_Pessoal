@@ -48,7 +48,7 @@ type
   procedure ExportToWorksheet(FilePath, FileName, FileExt, Query: String);
   procedure CloseAllFormOpenedConnections(Form: TForm);
   function IndexArrayString(xArray: StringMatriz; Col: Integer; Val: String): Integer;
-  function ComponentName(Component: TObject): String;
+  function ComponentName(Component: TComponent): String;
 
 implementation
 
@@ -1080,7 +1080,7 @@ begin
   end;
 end;
 
-function ComponentName(Component: TObject): String;
+function ComponentName(Component: TComponent): String;
 begin
   try
     Result := 'Parâmetro de component não definido';

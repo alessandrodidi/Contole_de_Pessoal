@@ -35,6 +35,8 @@ type
     lstvwPerfisAtribuidos: TListView;
     lstvwPerfisAcesso: TListView;
     lstvwUsuarios: TListView;
+    mniCopiarPara: TMenuItem;
+    mniCopiarDe: TMenuItem;
     mniRevogarTodosPerfis: TMenuItem;
     mniSelAllPerfisAtribuidos: TMenuItem;
     mniAtribuirTodosPerfis: TMenuItem;
@@ -53,6 +55,7 @@ type
     pnlPermissoes: TPanel;
     pmnPerfis: TPopupMenu;
     pmnPerfisAtribuidos: TPopupMenu;
+    pmnCopiarPermissoes: TPopupMenu;
     pstPermissoes: TPairSplitter;
     pstsPerfis: TPairSplitterSide;
     pstsPermissoes: TPairSplitterSide;
@@ -136,11 +139,14 @@ type
     procedure mniRevogarTodosPerfisClick(Sender: TObject);
     procedure mniSelAllPerfisAtribuidosClick(Sender: TObject);
     procedure mniSelAllPerfisClick(Sender: TObject);
+    procedure pmnCopiarPermissoesPopup(Sender: TObject);
     procedure pnlComandosSelecaoResize(Sender: TObject);
     procedure pstsPerfisResize(Sender: TObject);
     procedure sbtnAtribuirSelecionadosClick(Sender: TObject);
     procedure sbtnAtribuirTodosClick(Sender: TObject);
     procedure sbtnCopiarPermissoesClick(Sender: TObject);
+    procedure sbtnCopiarPermissoesMouseDown(Sender: TObject;
+      Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure sbtnLocalizarPessoaClick(Sender: TObject);
     procedure sbtnRevogarSelecionadosClick(Sender: TObject);
     procedure sbtnRevogarTodosClick(Sender: TObject);
@@ -211,6 +217,10 @@ type
     function IDNode(TreeView: TTreeView): Integer;
     procedure SelAllChildNodes(Node: TTreeNode; CheckUncheck: Integer);
     procedure CarregarPessoa(ID: String);
+    procedure mniCopiarPermissoesClick(Sender: TObject);
+    procedure CopiarPermissoes;
+    procedure mniCopiarPermissoesDeClick(Sender: TObject);
+    procedure mniCopiarPermissoesParaClick(Sender: TObject);
   private
     Acao, ModoAutenticacao, ModoAutenticacaoAtual, ModoVincPessoa: String;
     Editado, PermMultUser, PermAutoEditUser, ParamVincPessoa: Boolean;
@@ -1324,6 +1334,8 @@ begin
 end;
 
 procedure TfrmUsuarios.pmnUsuariosPopup(Sender: TObject);
+var
+  mniCopiarPermissoesDe, mniCopiarPermissoesPara: TMenuItem;
 begin
   if lstvwUsuarios.SelCount > 0 then
     begin
@@ -1360,9 +1372,22 @@ begin
       else
         mniPermissoes.Enabled := False;
       if CheckPermission(UserPermissions,Modulo,'SEGPMCOP') then
-        mniCopiarPermissoes.Enabled := True
+        begin
+          mniCopiarPermissoes.Enabled := True;
+          showmessage(inttostr(lstvwUsuarios.SelCount));
+          mniCopiarPermissoes.Clear;
+          mniCopiarPermissoesDe := TMenuItem.Create(mniCopiarPermissoes);
+          mniCopiarPermissoesDe.Caption := 'Copiar permissões de "'+Usuario_Selecionado+'"';
+          mniCopiarPermissoesDe.OnClick := @mniCopiarPermissoesDeClick;
+          mniCopiarPermissoes.Add(mniCopiarPermissoesDe);
+          mniCopiarPermissoesPara := TMenuItem.Create(mniCopiarPermissoes);
+          mniCopiarPermissoesPara.Caption := 'Copiar permissões para "'+Usuario_Selecionado+'"';
+          mniCopiarPermissoesPara.OnClick := @mniCopiarPermissoesParaClick;
+          mniCopiarPermissoes.Add(mniCopiarPermissoesPara);
+        end
       else
         mniCopiarPermissoes.Enabled := False;
+
       if CheckPermission(UserPermissions,Modulo,'SEGUSDEL') then
         mniDelUsuario.Enabled := True
       else
@@ -1398,7 +1423,38 @@ begin
       mniPermissoes.Visible := False;
       H1.Visible := False;
       H2.Visible := False;
+      if CheckPermission(UserPermissions,Modulo,'SEGPMCOP') then
+        begin
+          mniCopiarPermissoes.OnClick := @mniCopiarPermissoesClick;
+          mniCopiarPermissoes.Clear;
+        end
+      else
+        mniCopiarPermissoes.Enabled := False;
     end;
+end;
+
+procedure TfrmUsuarios.mniCopiarPermissoesClick(Sender: TObject);
+begin
+  CopiarPermissoes;
+end;
+
+procedure TfrmUsuarios.CopiarPermissoes;
+begin
+  frmCopiarPermissoes := TfrmCopiarPermissoes.Create(Self);
+  //frmCopiarPermissoes.IDUsuario := ID_Usuario_Selecionado;
+  //frmCopiarPermissoes.Usuario := Usuario_Selecionado;
+  frmCopiarPermissoes.PermAutoEditUser := PermAutoEditUser;
+  frmCopiarPermissoes.ShowModal;
+end;
+
+procedure TfrmUsuarios.mniCopiarPermissoesDeClick(Sender: TObject);
+begin
+  ShowMessage('copiar de');
+end;
+
+procedure TfrmUsuarios.mniCopiarPermissoesParaClick(Sender: TObject);
+begin
+  ShowMessage('copiar para');
 end;
 
 procedure TfrmUsuarios.sbtnCancelarClick(Sender: TObject);
@@ -2465,6 +2521,15 @@ begin
   end;
 end;
 
+procedure TfrmUsuarios.pmnCopiarPermissoesPopup(Sender: TObject);
+begin
+  if lstvwUsuarios.SelCount > 0 then
+    begin
+      mniCopiarDe.Caption := 'Copiar permissões de "'+Usuario_Selecionado+'"';
+      mniCopiarPara.Caption := 'Copiar permissões para "'+Usuario_Selecionado+'"';
+    end;
+end;
+
 procedure TfrmUsuarios.pnlComandosSelecaoResize(Sender: TObject);
 begin
   pnlBotoesSelecao.Top := Round(pnlComandosSelecao.Height/2)-Round(pnlBotoesSelecao.Height/2);
@@ -2722,15 +2787,25 @@ begin
 end;
 
 procedure TfrmUsuarios.sbtnCopiarPermissoesClick(Sender: TObject);
+var
+ vPonto : TPoint;
 begin
-  //if lstvwUsuarios.SelCount > 0 then
-    //begin
-      frmCopiarPermissoes := TfrmCopiarPermissoes.Create(Self);
-      frmCopiarPermissoes.IDUsuario := ID_Usuario_Selecionado;
-      frmCopiarPermissoes.Usuario := Usuario_Selecionado;
-      frmCopiarPermissoes.PermAutoEditUser := PermAutoEditUser;
-      frmCopiarPermissoes.ShowModal;
-    //end;
+  if lstvwUsuarios.SelCount > 0 then
+    begin
+      vPonto := sbtnCopiarPermissoes.ClientToScreen(Point(0, sbtnCopiarPermissoes.Height));
+      pmnCopiarPermissoes.PopUp(vPonto.x,vPonto.y);
+      //pmnCopiarPermissoes.PopUp;
+    end
+  else
+    begin
+      CopiarPermissoes;
+    end;
+end;
+
+procedure TfrmUsuarios.sbtnCopiarPermissoesMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+
 end;
 
 procedure TfrmUsuarios.sbtnLocalizarPessoaClick(Sender: TObject);
