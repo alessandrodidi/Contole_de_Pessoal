@@ -13,6 +13,7 @@ object frmUsuarios: TfrmUsuarios
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
   object pnlComandos: TPanel
     Left = 0
     Height = 30

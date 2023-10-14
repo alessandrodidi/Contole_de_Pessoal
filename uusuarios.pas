@@ -475,7 +475,6 @@ end;
 
 procedure TfrmUsuarios.sbtnEditUsuarioClick(Sender: TObject);
 var
-  i, j: Integer;
   descModoAutenticacao: String;
 begin
   if lstvwUsuarios.SelCount > 0 then

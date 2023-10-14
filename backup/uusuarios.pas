@@ -1374,7 +1374,6 @@ begin
       if CheckPermission(UserPermissions,Modulo,'SEGPMCOP') then
         begin
           mniCopiarPermissoes.Enabled := True;
-          showmessage(inttostr(lstvwUsuarios.SelCount));
           mniCopiarPermissoes.Clear;
           mniCopiarPermissoesDe := TMenuItem.Create(mniCopiarPermissoes);
           mniCopiarPermissoesDe.Caption := 'Copiar permissões de "'+Usuario_Selecionado+'"';
