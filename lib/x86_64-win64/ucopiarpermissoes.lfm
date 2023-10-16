@@ -3,12 +3,17 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
   Height = 500
   Top = 31
   Width = 700
-  BorderStyle = bsDialog
+  BorderIcons = [biSystemMenu]
   Caption = 'Copiar permissões'
   ClientHeight = 500
   ClientWidth = 700
+  KeyPreview = True
+  OnClose = FormClose
   OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
   object pnlComandos: TPanel
     Left = 0
     Height = 30
@@ -56,6 +61,7 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
     end
   end
   object pstConteudo: TPairSplitter
+    Cursor = crDefault
     Left = 0
     Height = 420
     Top = 30
@@ -87,7 +93,7 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
         Top = 20
         Width = 336
         Align = alClient
-        Checkboxes = True
+        AutoWidthLastColumn = True
         Columns = <        
           item
             Caption = 'UOID'
@@ -95,22 +101,23 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
             Width = 10
           end        
           item
-            AutoSize = True
             Caption = 'UOUsuario'
-            Width = 10
+            Width = 332
           end        
           item
             Caption = 'UOStatus'
             Visible = False
-            Width = 10
           end>
+        HideSelection = False
         MultiSelect = True
         ReadOnly = True
         RowSelect = True
         ScrollBars = ssAutoBoth
         ShowColumnHeaders = False
         TabOrder = 1
+        ViewStyle = vsReport
         OnCustomDrawSubItem = lstvwUsuarioOrigemCustomDrawSubItem
+        OnKeyDown = lstvwUsuarioOrigemKeyDown
       end
     end
     object pstsDireito: TPairSplitterSide
@@ -138,21 +145,21 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
         Top = 20
         Width = 359
         Align = alClient
-        Checkboxes = True
+        AutoWidthLastColumn = True
         Columns = <        
           item
             Caption = 'UDID'
             Visible = False
           end        
           item
-            AutoSize = True
             Caption = 'UDUsuario'
-            Width = 71
+            Width = 355
           end        
           item
             Caption = 'UDStatus'
             Visible = False
           end>
+        HideSelection = False
         MultiSelect = True
         ReadOnly = True
         RowSelect = True
@@ -160,7 +167,34 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
         ShowColumnHeaders = False
         TabOrder = 1
         ViewStyle = vsReport
+        OnCustomDrawSubItem = lstvwUsuarioDestinoCustomDrawSubItem
+        OnKeyDown = lstvwUsuarioDestinoKeyDown
+        OnSelectItem = lstvwUsuarioDestinoSelectItem
       end
     end
+  end
+  object sqlqUsuariosOrigem: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    ReadOnly = True
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 185
+    Top = 181
+  end
+  object sqlqUsuariosDestino: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    ReadOnly = True
+    Options = [sqoKeepOpenOnCommit]
+    Params = <>
+    Macros = <>
+    Left = 489
+    Top = 179
   end
 end

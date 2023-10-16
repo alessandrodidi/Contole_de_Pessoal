@@ -50,7 +50,7 @@
         <PackageName Value="LCL"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="25">
+    <Units Count="26">
       <Unit0>
         <Filename Value="ControlePessoal.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -231,6 +231,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UCopiarPermissoes"/>
       </Unit24>
+      <Unit25>
+        <Filename Value="uconfiguracoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfiguracoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConfiguracoes"/>
+      </Unit25>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

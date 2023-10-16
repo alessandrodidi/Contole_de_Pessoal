@@ -13,7 +13,6 @@ object frmUsuarios: TfrmUsuarios
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.2.6.0'
   object pnlComandos: TPanel
     Left = 0
     Height = 30
@@ -103,7 +102,6 @@ object frmUsuarios: TfrmUsuarios
     end
   end
   object pstConteudo: TPairSplitter
-    Cursor = crDefault
     Left = 0
     Height = 470
     Top = 30
@@ -175,6 +173,7 @@ object frmUsuarios: TfrmUsuarios
         Top = 26
         Width = 200
         Align = alClient
+        AutoWidthLastColumn = True
         Columns = <        
           item
             Caption = 'ID'
@@ -182,9 +181,8 @@ object frmUsuarios: TfrmUsuarios
             Width = 0
           end        
           item
-            AutoSize = True
             Caption = 'Usuario'
-            Width = 55
+            Width = 196
           end        
           item
             Caption = 'ModoAutenticacao'
@@ -201,9 +199,7 @@ object frmUsuarios: TfrmUsuarios
         ViewStyle = vsReport
         OnCustomDrawSubItem = lstvwUsuariosCustomDrawSubItem
         OnDblClick = lstvwUsuariosDblClick
-        OnInsert = lstvwUsuariosInsert
         OnKeyDown = lstvwUsuariosKeyDown
-        OnResize = lstvwUsuariosResize
         OnSelectItem = lstvwUsuariosSelectItem
       end
     end
@@ -410,7 +406,6 @@ object frmUsuarios: TfrmUsuarios
         end
       end
       object pstPermissoes: TPairSplitter
-        Cursor = crDefault
         Left = 0
         Height = 261
         Top = 159
@@ -484,6 +479,7 @@ object frmUsuarios: TfrmUsuarios
                 Top = 21
                 Width = 157
                 Align = alClient
+                AutoWidthLastColumn = True
                 Columns = <                
                   item
                     Caption = 'ID_PERFIL_ACESSO'
@@ -492,6 +488,7 @@ object frmUsuarios: TfrmUsuarios
                   end                
                   item
                     Caption = 'PERFIL_ACESSO'
+                    Width = 153
                   end                
                   item
                     Caption = 'STATUS'
@@ -507,9 +504,7 @@ object frmUsuarios: TfrmUsuarios
                 TabOrder = 1
                 ViewStyle = vsReport
                 OnCustomDrawSubItem = lstvwPerfisAcessoCustomDrawSubItem
-                OnInsert = lstvwPerfisAcessoInsert
                 OnKeyDown = lstvwPerfisAcessoKeyDown
-                OnResize = lstvwPerfisAcessoResize
                 OnSelectItem = lstvwPerfisAcessoSelectItem
               end
             end
@@ -651,6 +646,7 @@ object frmUsuarios: TfrmUsuarios
                   Top = 19
                   Width = 114
                   Align = alClient
+                  AutoWidthLastColumn = True
                   Columns = <                  
                     item
                       Caption = 'ID_PERFIL_ACESSO'
@@ -659,7 +655,7 @@ object frmUsuarios: TfrmUsuarios
                     end                  
                     item
                       Caption = 'PERFIL_ACESSO'
-                      Width = 10
+                      Width = 110
                     end                  
                     item
                       Caption = 'STATUS'
@@ -676,9 +672,7 @@ object frmUsuarios: TfrmUsuarios
                   TabOrder = 1
                   ViewStyle = vsReport
                   OnCustomDrawSubItem = lstvwPerfisAtribuidosCustomDrawSubItem
-                  OnInsert = lstvwPerfisAtribuidosInsert
                   OnKeyDown = lstvwPerfisAtribuidosKeyDown
-                  OnResize = lstvwPerfisAtribuidosResize
                   OnSelectItem = lstvwPerfisAtribuidosSelectItem
                 end
               end
@@ -1003,9 +997,11 @@ object frmUsuarios: TfrmUsuarios
     Top = 248
     object mniCopiarDe: TMenuItem
       Caption = 'Copiar permissões de...'
+      OnClick = mniCopiarDeClick
     end
     object mniCopiarPara: TMenuItem
       Caption = 'Copiar permissões para...'
+      OnClick = mniCopiarParaClick
     end
   end
 end

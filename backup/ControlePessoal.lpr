@@ -12,7 +12,7 @@ uses
   URefeicoes, UCadPessoas, UVinculosPessoas, UGerencFotos, UPesquisar,
   ExpertTabSheet, URegLogsSistema, uBtnTabSheet, UFiltros, UEditorCadFiltros,
   URestricaoAcesso, UEditorFiltros, UExecutaFiltro, UPerfisUsuarios,
-UCopiarPermissoes;
+UCopiarPermissoes, UConfiguracoes;
 
 {$R *.res}
 
@@ -24,7 +24,8 @@ begin
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmLogin, frmLogin);
   Launch;
-  Application.CreateForm(TfrmCopiarPermissoes, frmCopiarPermissoes);
+  Application.CreateForm(TForm1, Form1);
+  //Application.CreateForm(TfrmCopiarPermissoes, frmCopiarPermissoes);
   //Application.CreateForm(TfrmPerfisUsuarios, frmPerfisUsuarios);
   //Application.CreateForm(TfrmEditorFiltros, frmEditorFiltros);
   //Application.CreateForm(TfrmExecutaFiltro, frmCriteriosFiltroDin);

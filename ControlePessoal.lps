@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="12"/>
     <BuildModes Active="Default"/>
-    <Units Count="42">
+    <Units Count="43">
       <Unit0>
         <Filename Value="ControlePessoal.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="10"/>
-        <CursorPos X="5" Y="27"/>
+        <TopLine Value="18"/>
+        <CursorPos X="5" Y="28"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,7 +20,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ULogin"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="25"/>
         <TopLine Value="54"/>
         <CursorPos X="3" Y="56"/>
         <UsageCount Value="204"/>
@@ -31,9 +31,9 @@
         <Filename Value="ugfunc.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UGFunc"/>
-        <EditorIndex Value="16"/>
-        <TopLine Value="1068"/>
-        <CursorPos Y="1101"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="1096"/>
+        <CursorPos X="33" Y="1111"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -41,7 +41,7 @@
         <Filename Value="uinifiles.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UINIFiles"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="21"/>
         <CursorPos X="57" Y="174"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
@@ -50,7 +50,7 @@
         <Filename Value="udbo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UDBO"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="20"/>
         <TopLine Value="199"/>
         <CursorPos X="5" Y="232"/>
         <UsageCount Value="204"/>
@@ -63,7 +63,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="UConexao"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="22"/>
         <CursorPos X="20" Y="8"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
@@ -73,7 +73,7 @@
         <Filename Value="experttabsheet.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ExpertTabSheet"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="322"/>
         <CursorPos X="43" Y="336"/>
         <UsageCount Value="200"/>
@@ -86,10 +86,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UUsuarios"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="2381"/>
-        <CursorPos X="20" Y="2390"/>
+        <TopLine Value="2595"/>
+        <CursorPos X="3" Y="2501"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -101,7 +100,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UAlterarSenha"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="221"/>
         <CursorPos X="39" Y="225"/>
         <UsageCount Value="200"/>
@@ -115,7 +114,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="URegRefeicoes"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="227"/>
         <CursorPos X="39" Y="231"/>
         <UsageCount Value="204"/>
@@ -129,7 +128,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UCadHorariosRefeicoes"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="23"/>
         <TopLine Value="458"/>
         <CursorPos X="41" Y="483"/>
         <UsageCount Value="200"/>
@@ -143,9 +142,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UCadPessoas"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="1536"/>
-        <CursorPos X="3" Y="1538"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="600"/>
+        <CursorPos X="3" Y="608"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -158,7 +157,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UVinculosPessoas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="258"/>
+        <TopLine Value="257"/>
         <CursorPos X="3" Y="239"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -171,7 +170,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UGerencFotos"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="268"/>
         <CursorPos X="41" Y="293"/>
         <UsageCount Value="236"/>
@@ -185,8 +184,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UPesquisar"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="211"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="120"/>
         <CursorPos X="45" Y="24"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
@@ -200,7 +199,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="URegLogsSistema"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="237"/>
+        <TopLine Value="231"/>
         <CursorPos X="3" Y="241"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -222,7 +221,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UFiltros"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="359"/>
         <CursorPos X="39" Y="362"/>
         <UsageCount Value="204"/>
@@ -236,7 +235,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UEditorCadFiltros"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="19"/>
         <TopLine Value="65"/>
         <CursorPos X="41" Y="91"/>
         <UsageCount Value="201"/>
@@ -251,7 +250,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="URestricaoAcesso"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="250"/>
+        <TopLine Value="249"/>
         <CursorPos X="8" Y="283"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -264,7 +263,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UEditorFiltros"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="17"/>
         <TopLine Value="413"/>
         <CursorPos X="49" Y="423"/>
         <UsageCount Value="203"/>
@@ -315,19 +314,34 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UCopiarPermissoes"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="15"/>
-        <CursorPos X="13" Y="107"/>
-        <UsageCount Value="57"/>
+        <TopLine Value="76"/>
+        <CursorPos X="11" Y="90"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit24>
       <Unit25>
-        <Filename Value="unit1.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="7"/>
+        <Filename Value="uconfiguracoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfiguracoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConfiguracoes"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="84"/>
+        <CursorPos X="3" Y="84"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit25>
       <Unit26>
+        <Filename Value="unit1.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="6"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="ulocalizarcadpessoa.pas"/>
         <ComponentName Value="frmLocalizarCadPessoa"/>
         <HasResources Value="True"/>
@@ -336,253 +350,253 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="70"/>
         <CursorPos X="33" Y="107"/>
-        <UsageCount Value="41"/>
-      </Unit26>
-      <Unit27>
+        <UsageCount Value="40"/>
+      </Unit27>
+      <Unit28>
         <Filename Value="uprincipal.pas"/>
         <ComponentName Value="frmPrincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UPrincipal"/>
-        <EditorIndex Value="13"/>
-        <TopLine Value="142"/>
-        <CursorPos X="3" Y="155"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="320"/>
+        <CursorPos X="3" Y="334"/>
         <UsageCount Value="102"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit27>
-      <Unit28>
+      </Unit28>
+      <Unit29>
         <Filename Value="urefeicoes.pas"/>
         <ComponentName Value="frmRefeicoes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="URefeicoes"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="24"/>
         <TopLine Value="484"/>
         <CursorPos X="41" Y="509"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit28>
-      <Unit29>
+      </Unit29>
+      <Unit30>
         <Filename Value="C:\lazarus\components\lazcontrols\extendednotebook.pas"/>
         <UnitName Value="ExtendedNotebook"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="68"/>
         <CursorPos X="7" Y="381"/>
-        <UsageCount Value="59"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="58"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="C:\Lazarus\lcl\stdctrls.pp"/>
         <UnitName Value="StdCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="401"/>
         <CursorPos X="3" Y="418"/>
-        <UsageCount Value="5"/>
-      </Unit30>
-      <Unit31>
+        <UsageCount Value="4"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="C:\Lazarus\lcl\comctrls.pp"/>
         <UnitName Value="ComCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos X="39" Y="42"/>
-        <UsageCount Value="4"/>
-      </Unit31>
-      <Unit32>
+        <UsageCount Value="3"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="C:\Lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7424"/>
         <CursorPos Y="7444"/>
-        <UsageCount Value="3"/>
-      </Unit32>
-      <Unit33>
+        <UsageCount Value="2"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="C:\Lazarus\components\lazutils\laztracer.pas"/>
         <UnitName Value="LazTracer"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos Y="50"/>
-        <UsageCount Value="3"/>
-      </Unit33>
-      <Unit34>
+        <UsageCount Value="2"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="C:\Lazarus\fpc\3.2.2\source\packages\rtl-objpas\src\inc\strutils.pp"/>
         <UnitName Value="StrUtils"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="47"/>
         <CursorPos X="10" Y="64"/>
-        <UsageCount Value="3"/>
-      </Unit34>
-      <Unit35>
+        <UsageCount Value="2"/>
+      </Unit35>
+      <Unit36>
         <Filename Value="C:\Lazarus\lcl\include\listitem.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="733"/>
         <CursorPos Y="751"/>
-        <UsageCount Value="7"/>
-      </Unit35>
-      <Unit36>
+        <UsageCount Value="6"/>
+      </Unit36>
+      <Unit37>
         <Filename Value="C:\Lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2942"/>
         <CursorPos Y="2961"/>
-        <UsageCount Value="3"/>
-      </Unit36>
-      <Unit37>
+        <UsageCount Value="2"/>
+      </Unit37>
+      <Unit38>
         <Filename Value="C:\Lazarus\lcl\include\listitems.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="201"/>
         <CursorPos Y="221"/>
-        <UsageCount Value="3"/>
-      </Unit37>
-      <Unit38>
+        <UsageCount Value="2"/>
+      </Unit38>
+      <Unit39>
         <Filename Value="C:\Lazarus\lcl\include\customlistview.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1150"/>
         <CursorPos Y="1173"/>
-        <UsageCount Value="3"/>
-      </Unit38>
-      <Unit39>
+        <UsageCount Value="2"/>
+      </Unit39>
+      <Unit40>
         <Filename Value="C:\Lazarus\components\lazutils\lazstringutils.pas"/>
         <UnitName Value="LazStringUtils"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="228"/>
         <CursorPos Y="246"/>
-        <UsageCount Value="6"/>
-      </Unit39>
-      <Unit40>
+        <UsageCount Value="5"/>
+      </Unit40>
+      <Unit41>
         <Filename Value="C:\Lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2320"/>
         <CursorPos X="25" Y="2337"/>
-        <UsageCount Value="8"/>
-      </Unit40>
-      <Unit41>
+        <UsageCount Value="7"/>
+      </Unit41>
+      <Unit42>
         <Filename Value="C:\Lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysstrh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="39"/>
         <CursorPos X="3" Y="56"/>
-        <UsageCount Value="8"/>
-      </Unit41>
+        <UsageCount Value="7"/>
+      </Unit42>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1389" Column="17" TopLine="1356"/>
+        <Filename Value="ucadpessoas.pas"/>
+        <Caret Line="653" Column="3" TopLine="644"/>
       </Position1>
       <Position2>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="138" TopLine="122"/>
+        <Filename Value="uconfiguracoes.pas"/>
+        <Caret Line="93" Column="3" TopLine="84"/>
       </Position2>
       <Position3>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="135" TopLine="135"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="48" Column="48" TopLine="32"/>
       </Position3>
       <Position4>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1436" Column="3" TopLine="1412"/>
+        <Filename Value="uconfiguracoes.pas"/>
+        <Caret Line="103" Column="9" TopLine="89"/>
       </Position4>
       <Position5>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1427" Column="107" TopLine="1409"/>
+        <Filename Value="ucadpessoas.pas"/>
+        <Caret Line="412" Column="3" TopLine="400"/>
       </Position5>
       <Position6>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="220" Column="49" TopLine="210"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="170" Column="34" TopLine="165"/>
       </Position6>
       <Position7>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="2796" Column="135" TopLine="2130"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="175" Column="7" TopLine="168"/>
       </Position7>
       <Position8>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1387" Column="69" TopLine="1370"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="109" Column="3" TopLine="101"/>
       </Position8>
       <Position9>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1388" Column="46" TopLine="1364"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="102" Column="3" TopLine="99"/>
       </Position9>
       <Position10>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1377" Column="11" TopLine="1372"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="179" Column="5" TopLine="174"/>
       </Position10>
       <Position11>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="2448" Column="31" TopLine="2442"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="45" Column="27" TopLine="37"/>
       </Position11>
       <Position12>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="221" Column="31" TopLine="210"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="178" Column="5" TopLine="169"/>
       </Position12>
       <Position13>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1437" Column="47" TopLine="1417"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="45" Column="27" TopLine="37"/>
       </Position13>
       <Position14>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1381" Column="90" TopLine="1372"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="164" Column="3" TopLine="159"/>
       </Position14>
       <Position15>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="222" Column="50" TopLine="216"/>
+        <Filename Value="ugfunc.pas"/>
+        <Caret Line="52" Column="3" TopLine="34"/>
       </Position15>
       <Position16>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="1379" Column="41" TopLine="1364"/>
+        <Caret Line="945" Column="14" TopLine="939"/>
       </Position16>
       <Position17>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="2450" Column="20" TopLine="2444"/>
+        <Caret Line="2586" Column="3" TopLine="2582"/>
       </Position17>
       <Position18>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="223" Column="60" TopLine="203"/>
+        <Filename Value="ugfunc.pas"/>
+        <Caret Line="1121" Column="47" TopLine="1109"/>
       </Position18>
       <Position19>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="138" Column="60" TopLine="110"/>
+        <Filename Value="ugfunc.pas"/>
+        <Caret Line="1112" Column="24" TopLine="1106"/>
       </Position19>
       <Position20>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1381" Column="75" TopLine="1364"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="175" Column="7" TopLine="165"/>
       </Position20>
       <Position21>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1434" Column="48" TopLine="1417"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="131" Column="3" TopLine="127"/>
       </Position21>
       <Position22>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1450" Column="27" TopLine="1425"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="175" Column="33" TopLine="165"/>
       </Position22>
       <Position23>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="2794" Column="29" TopLine="2776"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="176" Column="3" TopLine="174"/>
       </Position23>
       <Position24>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="2796" Column="45" TopLine="2776"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="148" Column="34" TopLine="143"/>
       </Position24>
       <Position25>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="1440" TopLine="1416"/>
+        <Caret Line="2514" Column="3" TopLine="2509"/>
       </Position25>
       <Position26>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="221" Column="15" TopLine="205"/>
+        <Caret Line="953" Column="38" TopLine="942"/>
       </Position26>
       <Position27>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="1393" TopLine="1363"/>
+        <Caret Line="2627" Column="3" TopLine="2623"/>
       </Position27>
       <Position28>
         <Filename Value="uusuarios.pas"/>
-        <Caret Line="1427" Column="11" TopLine="1407"/>
+        <Caret Line="2587" Column="5" TopLine="2583"/>
       </Position28>
       <Position29>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="1386" Column="60" TopLine="1371"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="148" Column="5" TopLine="142"/>
       </Position29>
       <Position30>
-        <Filename Value="uusuarios.pas"/>
-        <Caret Line="2015" Column="21" TopLine="2003"/>
+        <Filename Value="ucopiarpermissoes.pas"/>
+        <Caret Line="90" Column="9" TopLine="80"/>
       </Position30>
     </JumpHistory>
     <RunParams>

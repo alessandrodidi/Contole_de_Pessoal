@@ -119,23 +119,21 @@ type
     procedure lstvwPerfisAtribuidosCustomDrawSubItem(Sender: TCustomListView;
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       var DefaultDraw: Boolean);
-    procedure lstvwPerfisAtribuidosInsert(Sender: TObject; Item: TListItem);
     procedure lstvwPerfisAtribuidosKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure lstvwPerfisAtribuidosResize(Sender: TObject);
     procedure lstvwPerfisAtribuidosSelectItem(Sender: TObject;
       Item: TListItem; Selected: Boolean);
     procedure lstvwPerfisAcessoCustomDrawSubItem(Sender: TCustomListView;
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       var DefaultDraw: Boolean);
-    procedure lstvwPerfisAcessoInsert(Sender: TObject; Item: TListItem);
-    procedure lstvwPerfisAcessoResize(Sender: TObject);
     procedure lstvwPerfisAcessoSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure lstvwUsuariosCustomDrawSubItem(Sender: TCustomListView;
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       var DefaultDraw: Boolean);
     procedure mniAtribuirTodosPerfisClick(Sender: TObject);
+    procedure mniCopiarDeClick(Sender: TObject);
+    procedure mniCopiarParaClick(Sender: TObject);
     procedure mniRevogarTodosPerfisClick(Sender: TObject);
     procedure mniSelAllPerfisAtribuidosClick(Sender: TObject);
     procedure mniSelAllPerfisClick(Sender: TObject);
@@ -167,10 +165,8 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure FormShow(Sender: TObject);
     procedure lstvwUsuariosDblClick(Sender: TObject);
-    procedure lstvwUsuariosInsert(Sender: TObject; Item: TListItem);
     procedure lstvwUsuariosKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure lstvwUsuariosResize(Sender: TObject);
     procedure lstvwUsuariosSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure mniDeselecionarTodosItensClick(Sender: TObject);
@@ -219,12 +215,14 @@ type
     procedure CarregarPessoa(ID: String);
     procedure mniCopiarPermissoesClick(Sender: TObject);
     procedure CopiarPermissoes;
+    procedure CopiarPermissoes(IDUsuario, Usuario, Tipo: String);
     procedure mniCopiarPermissoesDeClick(Sender: TObject);
     procedure mniCopiarPermissoesParaClick(Sender: TObject);
   private
     Acao, ModoAutenticacao, ModoAutenticacaoAtual, ModoVincPessoa: String;
     Editado, PermMultUser, PermAutoEditUser, ParamVincPessoa: Boolean;
     PermissoesTemp, PerfisAcessoTemp, PermissoesUsuario: Array of Array of String;
+    FoundResult: Integer;
     const
       Modulo: String = 'SEGURANCA';
       TitPerm: String = 'Permissões';
@@ -712,17 +710,6 @@ begin
     sbtnEditUsuario.Click;
 end;
 
-procedure TfrmUsuarios.lstvwUsuariosInsert(Sender: TObject; Item: TListItem);
-begin
-  if lstvwUsuarios.Column[1].Width <= lstvwUsuarios.Width-4 then
-    begin
-      lstvwUsuarios.Column[1].AutoSize := False;
-      lstvwUsuarios.Column[1].Width := lstvwUsuarios.Width-4;
-    end
-  else
-    lstvwUsuarios.Column[1].AutoSize := True;
-end;
-
 procedure TfrmUsuarios.lstvwUsuariosKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -735,17 +722,6 @@ begin
       edtPesquisar.Clear;
       edtPesquisar.Visible := False;
     end;
-end;
-
-procedure TfrmUsuarios.lstvwUsuariosResize(Sender: TObject);
-begin
-  if lstvwUsuarios.Column[1].Width <= lstvwUsuarios.Width-4 then
-    begin
-      lstvwUsuarios.Column[1].AutoSize := False;
-      lstvwUsuarios.Column[1].Width := lstvwUsuarios.Width-4;
-    end
-  else
-    lstvwUsuarios.Column[1].AutoSize := True;
 end;
 
 procedure TfrmUsuarios.FormKeyPress(Sender: TObject; var Key: char);
@@ -924,7 +900,10 @@ var
 begin
   if Key = VK_RETURN then
     begin
-      i := 0;
+      if FoundResult >= 0 then
+        i := FoundResult +1
+      else
+        i := 0;
       repeat
         Found := Pos(LowerCase(edtPesquisar.Text), LowerCase(lstvwUsuarios.Items[i].SubItems.Text)) >= 1;
         if not Found then inc(i);
@@ -932,11 +911,17 @@ begin
       if Found then
         begin
           lstvwUsuarios.Items[i].Selected := True;
-          lstvwUsuarios.SetFocus;
+          //lstvwUsuarios.SetFocus;
           lstvwUsuarios.Selected.MakeVisible(True);
+          FoundResult := i;
+          //edtPesquisar.SetFocus;
         end
       else
-        lstvwUsuarios.ItemIndex := -1;
+        begin
+          lstvwUsuarios.ItemIndex := -1;
+          FoundResult := -1;
+          edtPesquisar.SetFocus;
+        end;
     end;
 
   if Key = VK_ESCAPE then
@@ -963,9 +948,9 @@ begin
 
           //Verifica nos parâmetros se permite editar o próprio usuário
           if ((PermAutoEditUser = false)
-              and (ID_Usuario_Selecionado = gID_Usuario_Logado)) then
+              and (Item.Caption = gID_Usuario_Logado)) then
             begin
-              lstvwUsuarios.Selected.Selected := false;
+              Item.Selected := False;
               Abort;
             end;
 
@@ -1445,14 +1430,24 @@ begin
   frmCopiarPermissoes.ShowModal;
 end;
 
+procedure TfrmUsuarios.CopiarPermissoes(IDUsuario, Usuario, Tipo: String);
+begin
+  frmCopiarPermissoes := TfrmCopiarPermissoes.Create(Self);
+  frmCopiarPermissoes.IDUsuario := IDUsuario;
+  frmCopiarPermissoes.Usuario := Usuario;
+  frmCopiarPermissoes.Tipo := Tipo;
+  frmCopiarPermissoes.PermAutoEditUser := PermAutoEditUser;
+  frmCopiarPermissoes.ShowModal;
+end;
+
 procedure TfrmUsuarios.mniCopiarPermissoesDeClick(Sender: TObject);
 begin
-  ShowMessage('copiar de');
+  CopiarPermissoes(ID_Usuario_Selecionado, Usuario_Selecionado, 'DE');
 end;
 
 procedure TfrmUsuarios.mniCopiarPermissoesParaClick(Sender: TObject);
 begin
-  ShowMessage('copiar para');
+  CopiarPermissoes(ID_Usuario_Selecionado, Usuario_Selecionado, 'PARA');
 end;
 
 procedure TfrmUsuarios.sbtnCancelarClick(Sender: TObject);
@@ -1692,6 +1687,7 @@ begin
       edtPesquisar.Clear;
       edtPesquisar.Visible := False;
       lstvwUsuarios.ItemIndex := -1;
+      FoundResult := -1;
     end
   else
     begin
@@ -2450,6 +2446,16 @@ begin
   sbtnAtribuirTodos.Click;
 end;
 
+procedure TfrmUsuarios.mniCopiarDeClick(Sender: TObject);
+begin
+  CopiarPermissoes(ID_Usuario_Selecionado, Usuario_Selecionado, 'DE');
+end;
+
+procedure TfrmUsuarios.mniCopiarParaClick(Sender: TObject);
+begin
+  CopiarPermissoes(ID_Usuario_Selecionado, Usuario_Selecionado, 'PARA');
+end;
+
 procedure TfrmUsuarios.mniRevogarTodosPerfisClick(Sender: TObject);
 begin
   sbtnRevogarTodos.Click;
@@ -2533,18 +2539,6 @@ begin
   pnlBotoesSelecao.Top := Round(pnlComandosSelecao.Height/2)-Round(pnlBotoesSelecao.Height/2);
 end;
 
-procedure TfrmUsuarios.lstvwPerfisAcessoInsert(Sender: TObject; Item: TListItem
-  );
-begin
-  if lstvwPerfisAcesso.Column[1].Width <= lstvwPerfisAcesso.Width-4 then
-    begin
-      lstvwPerfisAcesso.Column[1].AutoSize := False;
-      lstvwPerfisAcesso.Column[1].Width := lstvwPerfisAcesso.Width-4;
-    end
-  else
-    lstvwPerfisAcesso.Column[1].AutoSize := True;
-end;
-
 procedure TfrmUsuarios.lstvwPerfisAcessoCustomDrawSubItem(
   Sender: TCustomListView; Item: TListItem; SubItem: Integer;
   State: TCustomDrawState; var DefaultDraw: Boolean);
@@ -2596,18 +2590,6 @@ begin
     mniAtribuirTodosPerfis.Click;
 end;
 
-procedure TfrmUsuarios.lstvwPerfisAtribuidosInsert(Sender: TObject;
-  Item: TListItem);
-begin
-  if lstvwPerfisAtribuidos.Column[1].Width <= lstvwPerfisAtribuidos.Width-4 then
-    begin
-      lstvwPerfisAtribuidos.Column[1].AutoSize := False;
-      lstvwPerfisAtribuidos.Column[1].Width := lstvwPerfisAtribuidos.Width-4;
-    end
-  else
-    lstvwPerfisAtribuidos.Column[1].AutoSize := True;
-end;
-
 procedure TfrmUsuarios.lstvwPerfisAtribuidosKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 begin
@@ -2616,17 +2598,6 @@ begin
 
   if (ssCtrl in Shift) and (ssShift in Shift) and (Key = VK_R) then
     mniRevogarTodosPerfis.Click;
-end;
-
-procedure TfrmUsuarios.lstvwPerfisAtribuidosResize(Sender: TObject);
-begin
-  if lstvwPerfisAtribuidos.Column[1].Width <= lstvwPerfisAtribuidos.Width-4 then
-    begin
-      lstvwPerfisAtribuidos.Column[1].AutoSize := False;
-      lstvwPerfisAtribuidos.Column[1].Width := lstvwPerfisAtribuidos.Width-4;
-    end
-  else
-    lstvwPerfisAcesso.Column[1].AutoSize := True;
 end;
 
 procedure TfrmUsuarios.lstvwPerfisAtribuidosSelectItem(Sender: TObject;
@@ -2648,17 +2619,6 @@ begin
           Abort;
         end;
     end;
-end;
-
-procedure TfrmUsuarios.lstvwPerfisAcessoResize(Sender: TObject);
-begin
-  if lstvwPerfisAcesso.Column[1].Width <= lstvwPerfisAcesso.Width-4 then
-    begin
-      lstvwPerfisAcesso.Column[1].AutoSize := False;
-      lstvwPerfisAcesso.Column[1].Width := lstvwPerfisAcesso.Width-4;
-    end
-  else
-    lstvwPerfisAcesso.Column[1].AutoSize := True;
 end;
 
 procedure TfrmUsuarios.lstvwPerfisAcessoSelectItem(Sender: TObject;

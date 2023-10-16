@@ -80,6 +80,7 @@ type
     procedure mniAjuda2Click(Sender: TObject);
     procedure mniAlterarSenhaClick(Sender: TObject);
     procedure mniCadPessoasClick(Sender: TObject);
+    procedure mniConfiguracoesClick(Sender: TObject);
     procedure mniGerenFotosClick(Sender: TObject);
     procedure mniLogsSistemaClick(Sender: TObject);
     procedure mniPerfisAcessoClick(Sender: TObject);
@@ -118,7 +119,7 @@ implementation
 uses
 UGFunc, UConexao, UDBO, ULogin, UUsuarios, UAlterarSenha, URegRefeicoes, URefeicoes,
 UCadHorariosRefeicoes, UCadPessoas, UVinculosPessoas, UGerencFotos, ExpertTabSheet,
-URegLogsSistema, uBtnTabSheet, URestricaoAcesso, UPerfisUsuarios;
+URegLogsSistema, uBtnTabSheet, URestricaoAcesso, UPerfisUsuarios, UConfiguracoes;
 
 {$R *.lfm}
 
@@ -349,6 +350,11 @@ begin
   //OpenForm(TfrmCadPessoas,'Modal');
   frmCadPessoas := TfrmCadPessoas.Create(Self);
   OpenWindowTab(PageControl,frmCadPessoas,[]);
+end;
+
+procedure TfrmPrincipal.mniConfiguracoesClick(Sender: TObject);
+begin
+  OpenWindowTab(PageControl,frmConfiguracoes,[]);
 end;
 
 procedure TfrmPrincipal.mniGerenFotosClick(Sender: TObject);

@@ -4,7 +4,7 @@ object frmPrincipal: TfrmPrincipal
   Top = -8
   Width = 1020
   Caption = 'Controle de Pessoal'
-  ClientHeight = 712
+  ClientHeight = 735
   ClientWidth = 1020
   Constraints.MinHeight = 510
   Constraints.MinWidth = 710
@@ -27,7 +27,7 @@ object frmPrincipal: TfrmPrincipal
   object StatusBar: TStatusBar
     Left = 0
     Height = 23
-    Top = 689
+    Top = 712
     Width = 1020
     Panels = <    
       item
@@ -46,7 +46,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object PageControl: TPageControl
     Left = 0
-    Height = 637
+    Height = 660
     Top = 52
     Width = 1020
     ActivePage = tsInicio
@@ -71,6 +71,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = '&Sistema'
       object mniConfiguracoes: TMenuItem
         Caption = '&Configurações'
+        OnClick = mniConfiguracoesClick
       end
       object mniSeguranca: TMenuItem
         Caption = 'Se&gurança'

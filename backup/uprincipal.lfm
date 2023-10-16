@@ -1,11 +1,11 @@
 object frmPrincipal: TfrmPrincipal
   Left = -8
-  Height = 696
+  Height = 735
   Top = -8
-  Width = 1004
+  Width = 1020
   Caption = 'Controle de Pessoal'
-  ClientHeight = 673
-  ClientWidth = 1004
+  ClientHeight = 735
+  ClientWidth = 1020
   Constraints.MinHeight = 510
   Constraints.MinWidth = 710
   KeyPreview = True
@@ -20,15 +20,15 @@ object frmPrincipal: TfrmPrincipal
     Left = 0
     Height = 52
     Top = 0
-    Width = 1004
+    Width = 1020
     Align = alTop
     TabOrder = 0
   end
   object StatusBar: TStatusBar
     Left = 0
     Height = 23
-    Top = 650
-    Width = 1004
+    Top = 712
+    Width = 1020
     Panels = <    
       item
         Alignment = taRightJustify
@@ -46,9 +46,9 @@ object frmPrincipal: TfrmPrincipal
   end
   object PageControl: TPageControl
     Left = 0
-    Height = 598
+    Height = 660
     Top = 52
-    Width = 1004
+    Width = 1020
     ActivePage = tsInicio
     Align = alClient
     MultiLine = True
@@ -71,6 +71,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = '&Sistema'
       object mniConfiguracoes: TMenuItem
         Caption = '&Configurações'
+        OnClick = mniConfiguracoesClick
       end
       object mniSeguranca: TMenuItem
         Caption = 'Se&gurança'

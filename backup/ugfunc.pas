@@ -49,6 +49,7 @@ type
   procedure CloseAllFormOpenedConnections(Form: TForm);
   function IndexArrayString(xArray: StringMatriz; Col: Integer; Val: String): Integer;
   function ComponentName(Component: TComponent): String;
+  procedure SelectAll(Component: TComponent);
 
 implementation
 
@@ -1099,5 +1100,34 @@ begin
   end;
 end;
 
-end.
+procedure SelectAll(Component: TComponent);
+var
+  i: Integer;
+  ListView: TListView;
+begin
+  try
+    if (Component is TListView) then
+      begin
+        for i := 0 to ListView.Items.Count - 1 do
+          begin
+            ListView.Items.Item[i].Selected := True;
+          end;
+      end;
 
+  except on E: exception do
+    begin
+      if E.ClassName <> 'EAbort' then
+        begin
+          Application.MessageBox(PChar('Falha ao tentar selecionar todos os itens'+#13#13
+                                +'Component '+Component.Name
+                                +'Classe '+E.ClassName+#13+'Detalhes: '+E.Message)
+                                ,'Erro'
+                                ,MB_ICONERROR + MB_OK);
+          Abort;
+          Exit;
+        end;
+    end;
+  end;
+end;
+
+end.
