@@ -13,7 +13,7 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '2.2.4.0'
   object pnlComandos: TPanel
     Left = 0
     Height = 30
@@ -102,7 +102,7 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
           end        
           item
             Caption = 'UOUsuario'
-            Width = 332
+            Width = 336
           end        
           item
             Caption = 'UOStatus'
@@ -153,7 +153,7 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
           end        
           item
             Caption = 'UDUsuario'
-            Width = 355
+            Width = 359
           end        
           item
             Caption = 'UDStatus'
@@ -196,5 +196,15 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
     Macros = <>
     Left = 489
     Top = 179
+  end
+  object sqlqCopiarPermissoes: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = dmConexao.ConexaoDB
+    Transaction = dmConexao.sqltTransactions
+    Params = <>
+    Macros = <>
+    Left = 230
+    Top = 296
   end
 end
