@@ -27,28 +27,31 @@
     <RunParams>
       <FormatVersion Value="2"/>
     </RunParams>
-    <RequiredPackages Count="7">
+    <RequiredPackages Count="8">
       <Item1>
-        <PackageName Value="laz.virtualtreeview_package"/>
+        <PackageName Value="dac10"/>
       </Item1>
       <Item2>
-        <PackageName Value="laz_synapse"/>
+        <PackageName Value="laz.virtualtreeview_package"/>
       </Item2>
       <Item3>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="laz_synapse"/>
       </Item3>
       <Item4>
-        <PackageName Value="bgracontrols"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item4>
       <Item5>
-        <PackageName Value="LazControls"/>
+        <PackageName Value="bgracontrols"/>
       </Item5>
       <Item6>
-        <PackageName Value="FCL"/>
+        <PackageName Value="LazControls"/>
       </Item6>
       <Item7>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item7>
+      <Item8>
+        <PackageName Value="LCL"/>
+      </Item8>
     </RequiredPackages>
     <Units Count="26">
       <Unit0>

@@ -207,4 +207,14 @@ object frmCopiarPermissoes: TfrmCopiarPermissoes
     Left = 230
     Top = 296
   end
+  object BufDataset1: TBufDataset
+    PacketRecords = -1
+    FieldDefs = <    
+      item
+        Name = 'Permissao'
+        DataType = ftString
+      end>
+    Left = 401
+    Top = 157
+  end
 end

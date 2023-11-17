@@ -24,7 +24,7 @@ begin
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmLogin, frmLogin);
   Launch;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
   //Application.CreateForm(TfrmCopiarPermissoes, frmCopiarPermissoes);
   //Application.CreateForm(TfrmPerfisUsuarios, frmPerfisUsuarios);
   //Application.CreateForm(TfrmEditorFiltros, frmEditorFiltros);

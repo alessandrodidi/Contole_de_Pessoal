@@ -7,12 +7,12 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, lazcontrols, runtimetypeinfocontrols, UPrincipal, ULogin, UGFunc,
-  UINIFiles, UDBO, UConexao, UUsuarios, UAlterarSenha, URegRefeicoes,
+  Forms, lazcontrols, runtimetypeinfocontrols, dac10, UPrincipal, ULogin,
+  UGFunc, UINIFiles, UDBO, UConexao, UUsuarios, UAlterarSenha, URegRefeicoes,
   URefeicoes, UCadPessoas, UVinculosPessoas, UGerencFotos, UPesquisar,
   ExpertTabSheet, URegLogsSistema, uBtnTabSheet, UFiltros, UEditorCadFiltros,
   URestricaoAcesso, UEditorFiltros, UExecutaFiltro, UPerfisUsuarios,
-UCopiarPermissoes, UConfiguracoes;
+  UCopiarPermissoes, UConfiguracoes;
 
 {$R *.res}
 

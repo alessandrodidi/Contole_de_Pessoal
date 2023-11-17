@@ -5,14 +5,15 @@ unit UCopiarPermissoes;
 interface
 
 uses
-  Classes, SysUtils, SQLDB, Forms, Controls, Graphics, Dialogs, LCLType,
-  ExtCtrls, PairSplitter, Buttons, ComCtrls, ShellCtrls;
+  Classes, SysUtils, SQLDB, BufDataset, DB, Forms, Controls, Graphics, Dialogs,
+  LCLType, ExtCtrls, PairSplitter, Buttons, ComCtrls, ShellCtrls;
 
 type
 
   { TfrmCopiarPermissoes }
 
   TfrmCopiarPermissoes = class(TForm)
+    BufDataset1: TBufDataset;
     lstvwUsuarioOrigem: TListView;
     lstvwUsuarioDestino: TListView;
     pnlEsqTitulo: TPanel;
@@ -68,9 +69,8 @@ uses
 
 procedure TfrmCopiarPermissoes.CopiarPermissoes(IDUsuarioOrigem, UsuarioOrigem, IDUsuarioDestino, UsuarioDestino: String);
 var
-  i,j: Integer;
+  i,j,k: Integer;
   PerfisOrigem,PermissoesOrigem,PerfisAtribuir,PermissoesAtribuir: String;
-
 begin
   try
     if lstvwUsuarioOrigem.SelCount = 0 then
@@ -103,12 +103,21 @@ begin
                                                           ,'AND P.id_usuario = '+lstvwUsuarioOrigem.Items.Item[i].Caption]
                                                           ,'perfis_acesso');
 
-              //Verifica as permissoes de acesso que o usuário origem possui
-              PermissoesOrigem := SQLQuery(sqlqCopiarPermissoes,['SELECT GROUP_CONCAT(''''''P.cod_permissao'''''','','') AS permissoes'
-                                                                ,'FROM g_usuarios_permissoes P'
-                                                                ,'WHERE P.permissao = True'
-                                                                ,'AND P.id_usuario = '+lstvwUsuarioOrigem.Items.Item[i].Caption]
-                                                                ,'permissoes');
+            //Verifica as permissoes de acesso que o usuário origem possui
+            PermissoesOrigem := SQLQuery(sqlqCopiarPermissoes,['SELECT GROUP_CONCAT(''"''||P.cod_permissao||''"'','','') AS permissoes'
+                                                              ,'FROM g_usuarios_permissoes P'
+                                                              ,'WHERE P.permissao = True'
+                                                              ,'AND P.id_usuario = '+lstvwUsuarioOrigem.Items.Item[i].Caption]
+                                                              ,'permissoes');
+
+            if ((PerfisOrigem = EmptyStr)
+                and (PermissoesOrigem = EmptyStr)) then
+              begin
+                Application.MessageBox(PChar('O usuário "'+lstvwUsuarioOrigem.Items[i].SubItems[0]+'" não pussui perfis de acesso e permissões para serem replicados')
+                                      ,'Aviso'
+                                      ,MB_ICONEXCLAMATION + MB_OK);
+              end;
+
             for j:=0 to lstvwUsuarioDestino.Items.Count-1 do
               begin
                 if lstvwUsuarioDestino.Items.Item[j].Selected then
@@ -126,15 +135,20 @@ begin
                                                                     ,'perfis_acesso');
 
                     //Captura as permissões que o usuário ainda possui
+                    showmessage(PermissoesOrigem);
                     PermissoesAtribuir := SQLQuery(sqlqCopiarPermissoes,['SELECT GROUP_CONCAT(P.cod_permissao,'','') AS permissoes'
                                                                         ,'FROM g_base_permissoes P'
+                                                                        {,'WHERE P.cod_permissao IN (SELECT DISTINCT K.cod_permissao'
+                                                                        ,'                          FROM g_usuarios_permissoes K'
+                                                                        ,'                          WHERE K.permissao = True'
+                                                                        ,'                          AND K.id_usuario = '+lstvwUsuarioOrigem.Items.Item[i].Caption+')'  }
                                                                         ,'WHERE P.cod_permissao IN ('+PermissoesOrigem+')'
                                                                         ,'AND P.cod_permissao NOT IN (SELECT H.cod_permissao'
                                                                         ,'                            FROM g_usuarios_permissoes H'
-                                                                        ,'                            WHERE H.id_usuario = '+lstvwUsuarioOrigem.Items.Item[i].Caption
+                                                                        ,'                            WHERE H.id_usuario = '+lstvwUsuarioDestino.Items.Item[j].Caption
                                                                         ,'                            AND  H.permissao = True)']
                                                                         ,'permissoes');
-
+                    ShowMessage(sqlqCopiarPermissoes.SQL.Text+#13+#13+PermissoesAtribuir);
                     if ((PerfisAtribuir = EmptyStr)
                          and (PermissoesAtribuir = EmptyStr)) then
                       begin
